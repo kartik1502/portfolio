@@ -1,15 +1,14 @@
 "use client";
 
 import AnimatedSection from "@/components/AnimatedSection";
-import { Mail, Globe, Link as LinkIcon, MessageCircle, Send } from "lucide-react";
+import { Mail, Globe, Link as LinkIcon, MessageCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const contacts = [
   {
     label: "Email",
     value: "kartikkulkarni1411@gmail.com",
-    href: "mailto:kartikkulkarni1411@gmail.com",
+    href: "mailto:kartikkulkarni1411@gmail.com?subject=Project%20inquiry%20from%20karthik.dev&body=Hi%20Karthik%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project.",
     icon: Mail,
   },
   {
@@ -20,8 +19,8 @@ const contacts = [
   },
   {
     label: "LinkedIn",
-    value: "karthik-kulkarni-ka1411",
-    href: "https://linkedin.com/in/karthik-kulkarni-ka1411/",
+    value: "karthikulkarni",
+    href: "https://www.linkedin.com/in/karthikulkarni/",
     icon: LinkIcon,
   },
   {
@@ -32,65 +31,50 @@ const contacts = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export default function Contact() {
   return (
     <div className="max-w-4xl mx-auto px-6 pt-28 pb-24">
       <AnimatedSection>
         <p className="section-label">Contact</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
-          <span className="text-neon">#</span> Get in Touch
+        <h1 className="text-3xl md:text-4xl font-bold text-ink uppercase tracking-[-0.01em] mb-3">
+          Get in touch
         </h1>
-        <p className="section-subtitle">
-          Want to collaborate or just say hi? Reach out through any channel
-          below.
+        <p className="text-base text-body-strong max-w-xl">
+          Have a project or just want to chat? Send a message through any
+          channel below.
         </p>
       </AnimatedSection>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="grid md:grid-cols-2 gap-5"
-      >
-        {contacts.map((contact) => {
+      <div className="grid md:grid-cols-2 gap-5 mt-12">
+        {contacts.map((contact, i) => {
           const Icon = contact.icon;
           return (
-            <motion.div key={contact.label} variants={itemVariants}>
+            <AnimatedSection key={contact.label} delay={i * 0.05}>
               <Link
                 href={contact.href}
                 target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-                className="card p-6 flex items-center gap-5 group"
+                className="brutal-card p-5 flex items-center gap-4 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-neon/10 flex items-center justify-center group-hover:bg-neon/20 transition-colors shrink-0">
-                  <Icon size={20} className="text-neon" />
+                <div className="brutal-card__icon flex items-center justify-center w-10 h-10">
+                  <Icon size={16} className="text-canvas" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-gray-500 mb-0.5">
+                  <p className="text-xs font-bold text-ink uppercase tracking-[1px] mb-0.5">
                     {contact.label}
                   </p>
-                  <p className="text-sm text-gray-200 group-hover:text-neon transition-colors truncate">
+                  <p className="text-sm text-body group-hover:text-ink transition-colors truncate">
                     {contact.value}
                   </p>
                 </div>
-                <Send
+                <ArrowRight
                   size={14}
-                  className="text-gray-500 group-hover:text-neon transition-colors shrink-0"
+                  className="text-muted group-hover:text-ink transition-colors shrink-0"
                 />
               </Link>
-            </motion.div>
+            </AnimatedSection>
           );
         })}
-      </motion.div>
+      </div>
     </div>
   );
 }
