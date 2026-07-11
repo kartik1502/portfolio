@@ -1,4 +1,8 @@
+"use client";
+
+import AnimatedSection from "@/components/AnimatedSection";
 import ProjectCard from "@/components/ProjectCard";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -17,21 +21,41 @@ const projects = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 export default function Projects() {
   return (
-    <div className="max-w-6xl mx-auto px-4 pt-24 pb-20">
-      <h1 className="text-3xl md:text-4xl font-bold mb-2">
-        <span className="text-neon">#</span> Projects
-      </h1>
-      <p className="text-gray-400 mb-10">
-        Things I have built and am currently building.
-      </p>
+    <div className="max-w-6xl mx-auto px-6 pt-28 pb-24">
+      <AnimatedSection>
+        <p className="section-label">Work</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+          <span className="text-neon">#</span> Projects
+        </h1>
+        <p className="section-subtitle">
+          Things I have built and am currently building.
+        </p>
+      </AnimatedSection>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid md:grid-cols-2 gap-6"
+      >
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <motion.div key={project.title} variants={itemVariants}>
+            <ProjectCard {...project} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
