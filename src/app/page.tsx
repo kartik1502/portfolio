@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Globe, Link as LinkIcon, Mail, ExternalLink } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import AnimatedSection from "@/components/AnimatedSection";
+import WakaTimeStats from "@/components/WakaTimeStats";
 import { motion } from "framer-motion";
 
 const featuredProjects = [
@@ -225,6 +226,16 @@ export default function Home() {
               ))}
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ─── WakaTime ─── */}
+      <section className="py-16 border-t border-hairline/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="section-label mb-6">Coding activity</p>
+          <div className="max-w-md">
+            <WakaTimeStats />
+          </div>
         </div>
       </section>
 

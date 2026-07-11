@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - uses: actions/configure-pages@v5
       - run: npm ci
+      - name: Fetch WakaTime stats
+        run: node scripts/fetch-wakatime.mjs
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
