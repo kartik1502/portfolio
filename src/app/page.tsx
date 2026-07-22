@@ -17,7 +17,7 @@ export default function Home() {
             Senior Software Engineer · Java Specialist
           </div>
           <h2 className="font-display text-xl md:text-3xl font-semibold uppercase tracking-[0.15em] text-foreground mb-6 animate-reveal [animation-delay:150ms]">
-          <Typewriter text="Hi, Karthik Kulkarni" speed={40} delay={500} loop loopPause={2500} />
+          <Typewriter text="Hi, I am Karthik Kulkarni" speed={40} delay={500} loop loopPause={2500} />
           </h2>
           <h1 className="font-display text-5xl md:text-8xl font-extrabold tracking-tighter text-balance leading-[0.9] animate-glitch-hover">
             <span className="text-gradient-flow">ENGINEERING</span> <br />
