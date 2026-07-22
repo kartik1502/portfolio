@@ -1,170 +1,261 @@
 "use client";
 
-import AnimatedSection from "@/components/AnimatedSection";
-import { Terminal, Award, ArrowRight, MapPin, Code2 } from "lucide-react";
-import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import {
+  EXPERIENCE, PROFICIENCY, CREDENTIALS, VALUES, TOOLBOX, BEYOND,
+} from "@/lib/portfolio-data";
+import { Reveal } from "@/components/Reveal";
+import { SectionSubnav } from "@/components/SectionSubnav";
 
-const experience = [
-  {
-    role: "SENIOR SOFTWARE ENGINEER",
-    company: "HCLTECH (CLIENT: CITI)",
-    period: "FEB 2024 — PRESENT",
-    location: "Bengaluru, Karnataka",
-    highlights: [
-      "Architected transaction processing for APAC region with Kafka event-driven architecture, processing thousands of transactions daily with zero compliance incidents.",
-      "Engineered multi-country Payment service consuming and validating cross-border transactions across diverse regional formats, reducing manual reconciliation effort by 80%.",
-      "Owned Payment Acceptance System (PAS) transaction pipeline end-to-end, optimizing Kafka consumers and MongoDB queries to consistently meet 2-second per-transaction SLA.",
-      "Onboarded pre-sanctions screening service to the regional team, reducing dependency on core banking systems by offloading compliance checks to an independent microservice.",
-      "Designed Payer ID resolution service, reducing new country onboarding time from 2 days to 3-4 hours (85% faster), eliminating 95% of country-specific code changes.",
-      "Collaborated with product and compliance teams to translate regional regulatory requirements into technical specifications, delivering 4 quarterly releases on schedule with zero production defects.",
-    ],
-  },
+const META = [
+  { label: "Role", value: "Senior Software Engineer" },
+  { label: "Stack", value: "Java / Spring / Kafka" },
+  { label: "Based", value: "Bengaluru, India" },
+  { label: "Mode", value: "Remote · Open" },
+  { label: "Exp", value: "2.5+ years" },
 ];
-
-const skillGroups = [
-  { label: "Java", pct: 95 },
-  { label: "Spring Boot", pct: 92 },
-  { label: "Microservices", pct: 88 },
-  { label: "Kafka", pct: 78 },
-  { label: "Docker", pct: 80 },
-  { label: "MongoDB", pct: 75 },
-  { label: "Spring Security", pct: 82 },
-  { label: "System Design", pct: 72 },
-];
-
-function SkillBar({ label, pct }: { label: string; pct: number }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-
-  return (
-    <div ref={ref} className="space-y-1.5">
-      <div className="flex items-center justify-between text-sm">
-        <span className="text-body uppercase tracking-[1px]">{label}</span>
-        <span className="text-ink font-bold">{pct}%</span>
-      </div>
-      <div className="h-[3px] bg-surface-card overflow-hidden border border-m-blue-light/20">
-        <motion.div
-          className="h-full bg-m-blue-light"
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${pct}%` } : { width: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function About() {
   return (
-    <div className="max-w-5xl mx-auto px-6 pt-28 pb-24">
-      {/* ─── Header ─── */}
-      <AnimatedSection>
-        <p className="section-label">Work</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-ink uppercase tracking-[-0.01em] mb-4">
-          Engineer & builder
-        </h1>
-        <p className="text-base text-body-strong max-w-2xl leading-relaxed">
-          Java Developer with 2.5 years of production experience building
-          high-volume payment processing systems at Citi. I specialize in Spring Boot,
-          Spring Data JPA, and event-driven microservices — owning end-to-end delivery
-          from development through production with strict SLAs.
-        </p>
-      </AnimatedSection>
-
-      {/* ─── Spec grid ─── */}
-      <AnimatedSection delay={0.1}>
-        <div className="grid grid-cols-2 md:grid-cols-5 mt-10 mb-16 brutal-card p-0 overflow-hidden">
-          {[
-            { label: "Role", value: "Senior Software Engineer" },
-            { label: "Stack", value: "Java / Spring / Kafka" },
-            { label: "Based", value: "Bengaluru, India" },
-            { label: "Mode", value: "Remote · Open" },
-            { label: "Exp", value: "2.5+ years" },
-          ].map((item, i) => (
-            <div key={item.label} className="p-5 border-r last:border-r-0 border-m-blue-light/20">
-              <p className="text-xs text-muted uppercase tracking-[1.5px] mb-1">{item.label}</p>
-              <p className="text-sm font-bold text-ink">{item.value}</p>
+    <>
+      <section id="bio" className="px-4 md:px-8 py-24 md:py-32 grid grid-cols-4 md:grid-cols-12 gap-6 border-b border-border">
+        <div className="col-span-4 md:col-span-8 animate-reveal">
+          <div className="font-display text-[10px] uppercase tracking-[0.25em] text-primary mb-6">
+            [ 02 ] · Work
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.9] mb-10">
+            ENGINEER <br />
+            <span className="text-primary">& BUILDER</span>
+          </h1>
+          <p className="max-w-[56ch] text-lg text-muted-foreground text-pretty">
+            Java Developer with 2.5 years of production experience building high-volume payment processing systems at Citi. I specialize in Spring Boot, Spring Data JPA, and event-driven microservices — owning end-to-end delivery from development through production with strict SLAs.
+          </p>
+        </div>
+        <div className="col-span-4 md:col-span-4 md:border-l border-border md:pl-6 grid grid-cols-2 md:grid-cols-1 gap-6 content-start animate-reveal [animation-delay:200ms]">
+          {META.map((m) => (
+            <div key={m.label}>
+              <div className="font-display text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                {m.label}
+              </div>
+              <div className="font-display text-sm">{m.value}</div>
             </div>
           ))}
         </div>
-      </AnimatedSection>
+      </section>
 
-      {/* ─── Two columns ─── */}
-      <div className="flex flex-col lg:flex-row gap-16">
-        {/* ─── Left: Experience ─── */}
-        <AnimatedSection className="flex-[2]">
-          <h3 className="text-sm font-bold text-ink uppercase tracking-[1.5px] mb-5 flex items-center gap-2">
-            <Terminal size={14} className="text-m-blue-light" /> Experience
-          </h3>
-          <div className="brutal-card p-5">
-            <div className="brutal-card__header">
-              <div className="brutal-card__icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6v-2zm0 4h8v2H6v-2zm10 0h2v2h-2v-2zm-6-4h8v2h-8v-2z" />
-                </svg>
-              </div>
-              <span className="brutal-card__title">{experience[0].company}</span>
-              <span className="text-xs text-muted uppercase tracking-[1px] ml-auto shrink-0">{experience[0].period}</span>
-            </div>
-            <p className="text-sm font-medium text-m-blue-light uppercase tracking-[1px] mb-3">{experience[0].role}</p>
-            <p className="text-xs text-muted flex items-center gap-1 mb-4">
-              <MapPin size={12} /> {experience[0].location}
-            </p>
-            <ul className="space-y-3">
-              {experience[0].highlights.map((h, i) => (
-                <li key={i} className="text-sm text-body leading-relaxed flex gap-3">
-                  <span className="text-m-blue-light mt-1 shrink-0">●</span>
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
+      <SectionSubnav
+        ariaLabel="Page sections"
+        items={[
+          { id: "bio", label: "01 · Bio" },
+          { id: "experience", label: "02 · Exp" },
+          { id: "values", label: "03 · Values" },
+          { id: "toolbox", label: "04 · Toolbox" },
+          { id: "proficiency", label: "05 · Skills" },
+          { id: "beyond", label: "06 · Beyond" },
+          { id: "credentials", label: "07 · Certs" },
+        ]}
+      />
+
+      <section id="experience" className="px-4 md:px-8 py-20 border-b border-border">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
+          <div className="col-span-4 md:col-span-3">
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary sticky top-24">
+              Experience.log
+            </h2>
           </div>
-        </AnimatedSection>
-
-        {/* ─── Right: Proficiency + Cert + CTA ─── */}
-        <AnimatedSection delay={0.15} className="flex-1 space-y-8">
-          <div>
-            <h3 className="text-sm font-bold text-ink uppercase tracking-[1.5px] mb-5 flex items-center gap-2">
-              <Code2 size={14} className="text-m-blue-light" /> Proficiency
-            </h3>
-            <div className="brutal-card p-5 space-y-4">
-              {skillGroups.map((skill) => (
-                <SkillBar key={skill.label} label={skill.label} pct={skill.pct} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-bold text-ink uppercase tracking-[1.5px] mb-4 flex items-center gap-2">
-              <Award size={14} className="text-m-blue-light" /> Credentials
-            </h3>
-            <div className="brutal-card p-5">
-              <div className="brutal-card__header">
-                <div className="brutal-card__icon">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" />
-                  </svg>
+          <div className="col-span-4 md:col-span-9 space-y-16">
+            {EXPERIENCE.map((job) => (
+              <article key={job.company} className="border-l-2 border-primary/40 pl-6">
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                  <h3 className="font-display text-lg font-bold uppercase tracking-wide">
+                    {job.company}
+                  </h3>
+                  <span className="font-display text-[10px] uppercase tracking-widest text-primary">
+                    {job.period}
+                  </span>
                 </div>
-                <a href="https://learn.microsoft.com/api/credentials/share/en-us/KarthikBanuKulkarni-3822/F3E8EB6DA5B638F1?sharingId=6B658AF77CCC44" target="_blank" className="brutal-card__title text-sm hover:text-m-blue-light transition-colors">GitHub Copilot Certification</a>
-              </div>
-              <p className="text-xs text-muted uppercase tracking-[1px]">Microsoft / GitHub 2025</p>
-              <div className="mt-3 pt-3 border-t-2 border-m-red/40 flex flex-wrap items-center gap-3 text-xs text-muted uppercase tracking-[1px]">
-                <span className="flex items-center gap-1"><Award size={12} className="text-m-blue-light" /> B.E Computer Science</span>
-                <span className="flex items-center gap-1"><MapPin size={12} className="text-m-blue-light" /> Bengaluru</span>
-              </div>
-            </div>
+                <div className="font-display text-sm text-muted-foreground mb-1">
+                  {job.role}
+                </div>
+                <div className="font-display text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
+                  {job.location}
+                </div>
+                <ul className="space-y-4">
+                  {job.bullets.map((b, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-4 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span className="font-display text-primary shrink-0 mt-1">
+                        0{i + 1}
+                      </span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <Link
-            href="mailto:kartikkulkarni1411@gmail.com?subject=Project%20inquiry%20from%20karthik.dev&body=Hi%20Karthik%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project."
-            className="brutal-card__btn"
-          >
-            Get in touch <ArrowRight size={14} className="inline" />
-          </Link>
-        </AnimatedSection>
-      </div>
-    </div>
+      <section
+        id="values"
+        className="px-4 md:px-8 py-20 border-b border-border bg-white/[0.02]"
+      >
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6 mb-10">
+          <Reveal from="left" className="col-span-4 md:col-span-3">
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              Values.md
+            </h2>
+          </Reveal>
+          <Reveal from="right" delay={80} className="col-span-4 md:col-span-9">
+            <p className="max-w-[56ch] text-sm text-muted-foreground">
+              The principles behind the code — how I make tradeoffs when nobody&apos;s watching.
+            </p>
+          </Reveal>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
+          {VALUES.map((v, i) => (
+            <Reveal key={v.n} from="scale" delay={i * 90}>
+              <div className="bg-background p-8 h-full hover:bg-primary/5 transition-colors">
+                <div className="flex items-baseline gap-3 mb-4">
+                  <span className="font-display text-xs text-primary">[{v.n}]</span>
+                  <h3 className="font-display text-lg font-bold tracking-tight">
+                    {v.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {v.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="toolbox"
+        className="px-4 md:px-8 py-20 border-b border-border"
+      >
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
+          <Reveal from="left" className="col-span-4 md:col-span-3">
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary sticky top-32">
+              Toolbox.yaml
+            </h2>
+          </Reveal>
+          <div className="col-span-4 md:col-span-9 divide-y divide-border border-y border-border">
+            {TOOLBOX.map((g, i) => (
+              <Reveal key={g.group} from="right" delay={i * 70}>
+                <div className="py-6 grid grid-cols-4 md:grid-cols-9 gap-4 items-start">
+                  <div className="col-span-4 md:col-span-3 font-display text-[11px] uppercase tracking-widest text-muted-foreground">
+                    <span className="text-primary">{String(i + 1).padStart(2, "0")}</span>{" "}
+                    {g.group}
+                  </div>
+                  <div className="col-span-4 md:col-span-6 flex flex-wrap gap-2">
+                    {g.items.map((it) => (
+                      <span
+                        key={it}
+                        className="px-2.5 py-1 border border-border text-[10px] font-display uppercase tracking-widest hover:border-primary hover:text-primary transition-colors"
+                      >
+                        {it}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="proficiency" className="px-4 md:px-8 py-20 border-b border-border">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
+          <div className="col-span-4 md:col-span-3">
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              Proficiency.chart
+            </h2>
+          </div>
+          <div className="col-span-4 md:col-span-9 space-y-4">
+            {PROFICIENCY.map((p) => (
+              <div key={p.name}>
+                <div className="flex justify-between font-display text-xs uppercase tracking-widest mb-1.5">
+                  <span>{p.name}</span>
+                  <span className="text-primary">{p.value}%</span>
+                </div>
+                <div className="h-1.5 border border-border">
+                  <div
+                    className="h-full bg-primary"
+                    style={{ width: `${p.value}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="beyond"
+        className="px-4 md:px-8 py-20 border-b border-border bg-white/[0.02]"
+      >
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6 mb-10">
+          <Reveal from="left" className="col-span-4 md:col-span-3">
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              Beyond_Code
+            </h2>
+          </Reveal>
+          <Reveal from="right" delay={80} className="col-span-4 md:col-span-9">
+            <p className="max-w-[56ch] text-sm text-muted-foreground">
+              What I read, teach, and do when the IDE is closed.
+            </p>
+          </Reveal>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
+          {BEYOND.map((b, i) => (
+            <Reveal key={b.title} from="scale" delay={i * 90}>
+              <article className="bg-background p-6 md:p-8 h-full hover:bg-primary/5 transition-colors">
+                <h3 className="font-display text-base font-bold tracking-tight mb-2">
+                  {b.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {b.body}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="credentials" className="px-4 md:px-8 py-20">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
+          <div className="col-span-4 md:col-span-3">
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              Credentials
+            </h2>
+          </div>
+          <div className="col-span-4 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {CREDENTIALS.map((c) => {
+              const inner = (
+                <div className="p-6 border border-border h-full hover:border-primary transition-colors">
+                  <div className="font-display text-[10px] uppercase tracking-widest text-primary mb-3">
+                    {c.issuer} {c.year && `· ${c.year}`}
+                  </div>
+                  <div className="font-display text-lg font-bold">
+                    {c.title}
+                  </div>
+                </div>
+              );
+              return c.href ? (
+                <a key={c.title} href={c.href} target="_blank" rel="noreferrer">
+                  {inner}
+                </a>
+              ) : (
+                <div key={c.title}>{inner}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

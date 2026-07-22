@@ -1,80 +1,66 @@
 "use client";
 
-import AnimatedSection from "@/components/AnimatedSection";
-import { Mail, Globe, Link as LinkIcon, MessageCircle, ArrowRight } from "lucide-react";
-import Link from "next/link";
-
-const contacts = [
-  {
-    label: "Email",
-    value: "kartikkulkarni1411@gmail.com",
-    href: "mailto:kartikkulkarni1411@gmail.com?subject=Project%20inquiry%20from%20karthik.dev&body=Hi%20Karthik%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project.",
-    icon: Mail,
-  },
-  {
-    label: "GitHub",
-    value: "kartik1502",
-    href: "https://github.com/kartik1502",
-    icon: Globe,
-  },
-  {
-    label: "LinkedIn",
-    value: "karthikulkarni",
-    href: "https://www.linkedin.com/in/karthikulkarni/",
-    icon: LinkIcon,
-  },
-  {
-    label: "Twitter / X",
-    value: "@Kartik1141",
-    href: "https://twitter.com/Kartik1141",
-    icon: MessageCircle,
-  },
-];
+import { CONTACT } from "@/lib/portfolio-data";
 
 export default function Contact() {
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-28 pb-24">
-      <AnimatedSection>
-        <p className="section-label">Contact</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-ink uppercase tracking-[-0.01em] mb-3">
-          Get in touch
-        </h1>
-        <p className="text-base text-body-strong max-w-xl">
-          Have a project or just want to chat? Send a message through any
-          channel below.
-        </p>
-      </AnimatedSection>
-
-      <div className="grid md:grid-cols-2 gap-5 mt-12">
-        {contacts.map((contact, i) => {
-          const Icon = contact.icon;
-          return (
-            <AnimatedSection key={contact.label} delay={i * 0.05}>
-              <Link
-                href={contact.href}
-                target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-                className="brutal-card p-5 flex items-center gap-4 group"
-              >
-                <div className="brutal-card__icon flex items-center justify-center w-10 h-10">
-                  <Icon size={16} className="text-canvas" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-bold text-ink uppercase tracking-[1px] mb-0.5">
-                    {contact.label}
-                  </p>
-                  <p className="text-sm text-body group-hover:text-ink transition-colors truncate">
-                    {contact.value}
-                  </p>
-                </div>
-                <ArrowRight
-                  size={14}
-                  className="text-muted group-hover:text-ink transition-colors shrink-0"
-                />
-              </Link>
-            </AnimatedSection>
-          );
-        })}
+    <section className="px-4 md:px-8 py-24 md:py-40">
+      <div className="font-display text-[10px] uppercase tracking-[0.25em] text-primary mb-6">
+        [ 05 ] · Connect
       </div>
-    </div>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24">
+        <div>
+          <h1 className="font-display text-5xl md:text-8xl font-extrabold tracking-tighter mb-10 leading-[0.9]">
+            READY FOR <br /> <span className="text-primary">INTEGRATION?</span>
+          </h1>
+          <p className="max-w-[52ch] text-lg text-muted-foreground mb-10">
+            Whether it&apos;s a microservices architecture, an event-driven system, or a backend that needs to scale — I&apos;m ready.
+          </p>
+          <a
+            href={`mailto:${CONTACT.email}?subject=Project%20inquiry`}
+            className="font-display text-xl md:text-2xl underline underline-offset-8 decoration-border hover:decoration-primary hover:text-primary transition-all break-all"
+          >
+            {CONTACT.email}
+          </a>
+        </div>
+        <div className="w-full md:w-1/3 p-6 border border-border bg-white/5 backdrop-blur-sm">
+          <div className="flex justify-between items-center mb-6">
+            <span className="font-display text-[9px] uppercase text-muted-foreground">
+              Session_Status
+            </span>
+            <div className="size-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
+          </div>
+          <p className="text-xs font-display text-muted-foreground leading-relaxed">
+            Currently open to backend / microservices roles and consulting work. Response time: within 24 hours.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { label: "GitHub", href: CONTACT.github, handle: "@kartik1502" },
+          { label: "LinkedIn", href: CONTACT.linkedin, handle: "/in/kartik1502" },
+          { label: "Email", href: `mailto:${CONTACT.email}`, handle: CONTACT.email },
+        ].map((c) => (
+          <a
+            key={c.label}
+            href={c.href}
+            target="_blank"
+            rel="noreferrer"
+            className="group p-6 border border-border hover:border-primary hover:bg-primary/5 transition-colors"
+          >
+            <div className="flex justify-between items-baseline mb-4">
+              <span className="font-display text-[10px] uppercase tracking-widest text-primary">
+                {c.label}
+              </span>
+              <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                ↗
+              </span>
+            </div>
+            <div className="font-display text-sm truncate">{c.handle}</div>
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }

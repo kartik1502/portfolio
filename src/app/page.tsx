@@ -1,267 +1,261 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Globe, Link as LinkIcon, Mail, ExternalLink } from "lucide-react";
-import ProjectCard from "@/components/ProjectCard";
-import AnimatedSection from "@/components/AnimatedSection";
-import WakaTimeStats from "@/components/WakaTimeStats";
-import { motion } from "framer-motion";
-
-const featuredProjects = [
-  {
-    title: "Arya Banking",
-    description:
-      "Event-driven banking platform with 7 microservices using Kafka-based async communication. Implemented authentication, user, admin, API gateway, and Config server services with Dockerized deployment.",
-    tags: ["Spring Boot", "Kafka", "Keycloak", "Docker", "Microservices"],
-    href: "https://github.com/Event-Based-Banking-Application",
-    metrics: [
-      { label: "Microservices", value: "7" },
-      { label: "Setup Time", value: "5 min" },
-    ],
-    repo: "Event-Based-Banking-Application/.github",
-  },
-  {
-    title: "Spring Boot Banking",
-    description:
-      "Microservices banking platform with Eureka service registry, Spring Cloud Gateway, Keycloak auth, and Feign Client communication. Database-per-service pattern with 5 dedicated MySQL instances.",
-    tags: ["Spring Boot", "Microservices", "Eureka", "Keycloak", "MySQL"],
-    href: "https://github.com/kartik1502/Spring-Boot-Microservices-Banking-Application",
-    metrics: [
-      { label: "GitHub Stars", value: "—" },
-      { label: "Forks", value: "—" },
-    ],
-    repo: "kartik1502/Spring-Boot-Microservices-Banking-Application",
-  },
-];
-
-const blogPosts = [
-  { title: "Apache Kafka: Intro and Setup", href: "https://devscribbles.hashnode.dev/apache-kafka-intro-and-setup" },
-  { title: "Spring Boot Tutorial: Spring Batch", href: "https://devscribbles.hashnode.dev/spring-boot-tutorial-spring-batch" },
-  { title: "Mastering Microservices: Inter-Service Communication with Feign Client", href: "https://devscribbles.hashnode.dev/mastering-microservices-inter-service-communication-using-spring-cloud-feign-client-part-4" },
-];
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+import { PROJECTS, STACK, METRICS, NOW, TESTIMONIALS } from "@/lib/portfolio-data";
+import { RepoStat } from "@/components/RepoStat";
+import { Reveal } from "@/components/Reveal";
+import { Spotlight } from "@/components/Spotlight";
 
 export default function Home() {
   return (
-    <div>
-      {/* ─── Hero ─── */}
-      <section className="min-h-[80vh] flex items-center">
-        <div className="max-w-6xl mx-auto px-6 w-full pt-24 pb-20">
-          <div className="relative flex flex-col border border-hairline/60">
-            <div className="absolute -left-px -top-px h-3 w-3 bg-m-blue-light" />
-            <div className="absolute -bottom-px -left-px h-3 w-3 bg-m-blue-light" />
-            <div className="absolute -right-px -top-px h-3 w-3 bg-m-blue-light" />
-            <div className="absolute -bottom-px -right-px h-3 w-3 bg-m-blue-light" />
-
-            <div className="relative z-20 grid md:grid-cols-5 gap-16 items-start p-8 md:p-12">
-              <motion.div
-                variants={stagger}
-                initial="hidden"
-                animate="visible"
-                className="md:col-span-3"
-              >
-                <motion.p
-                  variants={fadeUp}
-                  className="text-sm font-medium text-m-blue-light uppercase tracking-[1.5px] mb-4"
-                >
-                  Senior software engineer · Java specialist
-                </motion.p>
-
-                <motion.h1
-                  variants={fadeUp}
-                  className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[1] tracking-[-0.02em] text-ink mb-6 uppercase"
-                >
-                  Karthik
-                  <br />
-                  <span className="gradient-text">Kulkarni</span>
-                </motion.h1>
-
-                <motion.p
-                  variants={fadeUp}
-                  className="text-base text-body-strong leading-relaxed max-w-lg"
-                >
-                  2.5 years building high-volume payment systems at Citi.
-                  Spring Boot, Kafka, event-driven microservices.
-                  Currently architecting a 9-repository platform.
-                </motion.p>
-
-                <motion.div
-                  variants={fadeUp}
-                  className="flex items-center gap-5 mt-10"
-                >
-                  <Link
-                    href="/projects"
-                    className="inline-flex items-center gap-2 text-sm uppercase tracking-[1.5px] text-ink border border-ink px-6 py-3 hover:bg-ink hover:text-canvas transition-all duration-300"
-                  >
-                    See the work <ArrowRight size={14} />
-                  </Link>
-                  <Link
-                    href="mailto:kartikkulkarni1411@gmail.com?subject=Project%20inquiry%20from%20karthik.dev&body=Hi%20Karthik%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project."
-                    className="inline-flex items-center gap-1.5 text-sm uppercase tracking-[1.5px] text-muted hover:text-ink transition-colors"
-                  >
-                    Get in touch →
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={fadeUp}
-                  className="flex items-center gap-5 mt-10"
-                >
-                  {[
-                    { icon: Globe, href: "https://github.com/kartik1502" },
-                    { icon: LinkIcon, href: "https://www.linkedin.com/in/karthikulkarni/" },
-                    { icon: Mail, href: "mailto:kartikkulkarni1411@gmail.com" },
-                  ].map(({ icon: Icon, href }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      target={href.startsWith("mailto") ? undefined : "_blank"}
-                      className="text-muted hover:text-ink transition-colors"
-                    >
-                      <Icon size={16} />
-                    </Link>
-                  ))}
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="md:col-span-2"
-              >
-                <div className="brutal-card p-6">
-                  <div className="brutal-card__header">
-                    <div className="brutal-card__icon">
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-                      </svg>
-                    </div>
-                    <span className="brutal-card__title">Mindset</span>
-                  </div>
-                  <div className="brutal-card__body border-b-0 pb-0">
-                    <p className="text-xl font-bold text-ink uppercase leading-tight">You design.</p>
-                    <div className="w-6 h-0.5 bg-m-blue-light my-3" />
-                    <p className="text-xl font-bold text-ink uppercase leading-tight">I build the backend.</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+    <>
+      <section id="top" className="px-4 md:px-8 py-24 md:py-40 grid grid-cols-4 md:grid-cols-12 gap-6">
+        <div className="col-span-4 md:col-span-8 animate-reveal">
+          <div className="flex items-center gap-3 mb-8 font-display text-[10px] uppercase tracking-[0.25em] text-primary">
+            <span className="relative inline-flex size-1.5 rounded-full bg-primary text-primary shadow-[0_0_10px_currentColor] ping-dot" />
+            Senior Software Engineer · Java Specialist
+          </div>
+          <h1 className="font-display text-5xl md:text-8xl font-extrabold tracking-tighter text-balance leading-[0.9] animate-glitch-hover">
+            <span className="text-gradient-flow">ENGINEERING</span> <br />
+            <span
+              className="text-transparent"
+              style={{ WebkitTextStroke: "1px var(--color-foreground)" }}
+            >
+              SYSTEMS
+            </span>{" "}
+            OF <br />
+            HIGH DENSITY<span className="text-primary animate-caret ml-1">_</span>
+          </h1>
+          <p className="mt-12 max-w-[52ch] text-lg text-muted-foreground text-pretty">
+            2.5 years building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a 9-repository platform.
+          </p>
+          <div className="mt-12 flex items-center gap-4">
+            <div className="h-px w-12 bg-primary" />
+            <span className="font-display text-xs uppercase tracking-[0.2em] text-primary">
+              You design. I build the backend.
+            </span>
+          </div>
+          <div className="mt-12 flex flex-wrap gap-4 font-display text-[10px] uppercase tracking-widest">
+            <a
+              href="#work"
+              className="px-4 py-3 border border-border hover:border-primary transition-colors"
+            >
+              ↓ Jump to work
+            </a>
+            <Link
+              href="/projects"
+              className="px-4 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              See the work →
+            </Link>
+            <Link
+              href="/contact"
+              className="px-4 py-3 border border-border hover:border-primary transition-colors"
+            >
+              Get in touch
+            </Link>
+          </div>
+        </div>
+        <div className="col-span-4 md:col-span-4 flex flex-col justify-end items-start md:items-end animate-reveal [animation-delay:200ms]">
+          <div className="font-display text-[10px] leading-relaxed text-muted-foreground uppercase tracking-tighter md:text-right">
+            Role: Senior Software Engineer @ Citi<br />
+            Focus: Distributed Payment Systems<br />
+            Location: Bengaluru, IN<br />
+            Status: Open_To_Opportunities
           </div>
         </div>
       </section>
 
-      {/* ─── Tools ─── */}
-      <section className="py-16 border-y border-hairline/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="m-stripe mb-8" />
-          <AnimatedSection>
-            <p className="section-label text-center mb-8">The stack</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {["Java", "Spring Boot", "Kafka", "Docker", "MongoDB", "Keycloak", "Microservices", "System Design"].map((skill) => (
-                <div key={skill} className="brutal-card px-5 py-3">
-                  <span className="text-sm font-bold text-ink uppercase tracking-[1px] whitespace-nowrap">{skill}</span>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ─── Featured Work ─── */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection>
-            <p className="section-label">Selected work</p>
-            <div className="flex items-end justify-between mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-ink uppercase tracking-[-0.01em]">
-                Proof, not promises
-              </h2>
-              <Link
-                href="/projects"
-                className="hidden md:flex items-center gap-1 text-xs uppercase tracking-[1.5px] text-muted hover:text-ink transition-colors"
-              >
-                All work <ArrowRight size={13} />
-              </Link>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 gap-5">
-            {featuredProjects.map((project, i) => (
-              <AnimatedSection key={project.title} delay={i * 0.1}>
-                <ProjectCard {...project} />
-              </AnimatedSection>
+      <section
+        id="stack"
+        aria-label="Tech stack"
+        className="border-t border-b border-border bg-white/[0.02] overflow-hidden"
+      >
+        <div className="flex whitespace-nowrap animate-marquee font-display text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+          <ul className="flex shrink-0 gap-8 px-4 md:px-8 py-4">
+            {STACK.map((s) => (
+              <li key={s} className="flex items-center gap-3 hover:text-primary transition-colors">
+                <span className="size-1 rounded-full bg-primary" />
+                {s}
+              </li>
             ))}
-          </div>
+          </ul>
+          <ul aria-hidden className="flex shrink-0 gap-8 px-4 md:px-8 py-4">
+            {STACK.map((s) => (
+              <li key={`${s}-2`} className="flex items-center gap-3">
+                <span className="size-1 rounded-full bg-primary" />
+                {s}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* ─── Writing strip ─── */}
-      <section className="py-16 border-t border-hairline/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection>
-            <p className="section-label">Latest writing</p>
-            <div className="flex flex-col gap-0 mt-6">
-              {blogPosts.map((post) => (
-                <Link
-                  key={post.href}
-                  href={post.href}
-                  target="_blank"
-                  className="group flex items-center justify-between py-4 border-b border-hairline/30 last:border-b-0"
+      <section
+        id="metrics"
+        className="px-4 md:px-8 py-20 md:py-28 border-b border-border"
+      >
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-6 mb-10 items-end">
+          <div className="col-span-4 md:col-span-6">
+            <div className="font-display text-[10px] uppercase tracking-[0.3em] text-primary mb-4">
+              {'// Signal.log'}
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95]">
+              What 2.5 years at HCLTech [Citi] <br /> actually moved.
+            </h2>
+          </div>
+          <p className="col-span-4 md:col-span-6 md:text-right text-sm text-muted-foreground max-w-[46ch] md:ml-auto">
+            Numbers reflect owned scope on the APAC Payment Acceptance System — real SLAs, real reconciliation, real deploys.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-px bg-border border border-border">
+          {METRICS.map((m, i) => (
+            <Reveal key={m.label} delay={i * 60}>
+              <div className="bg-background p-6 h-full flex flex-col justify-between gap-6 hover:bg-primary/5 transition-colors">
+                <div className="font-display text-[10px] uppercase tracking-widest text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")} · {m.note}
+                </div>
+                <div>
+                  <div className="font-display text-3xl md:text-4xl font-extrabold text-primary tracking-tight">
+                    {m.value}
+                  </div>
+                  <div className="mt-1 font-display text-[11px] uppercase tracking-widest">
+                    {m.label}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="work" className="border-t border-border bg-white/[0.02] scroll-mt-24">
+        <div className="px-4 md:px-8 py-4 border-b border-border flex justify-between items-center">
+          <h2 className="font-display text-xs font-bold uppercase tracking-widest text-primary">
+            Selected_Modules.log
+          </h2>
+          <Link
+            href="/projects"
+            className="text-[10px] font-display uppercase tracking-widest text-muted-foreground hover:text-primary"
+          >
+            All work →
+          </Link>
+        </div>
+
+        {PROJECTS.map((p, i) => (
+          <Reveal key={p.n} as="article" delay={i * 80}>
+          <Spotlight as="a"
+            href={p.href}
+            target="_blank"
+            rel="noreferrer"
+            className="block group border-b border-border hover:bg-primary/5 transition-colors hover-lift"
+          >
+            <div className="px-4 md:px-8 py-12 md:py-20 grid grid-cols-4 md:grid-cols-12 gap-6">
+              <div className="col-span-1 font-display text-xs text-muted-foreground">
+                [ {p.n} ]
+              </div>
+              <div className="col-span-3 md:col-span-5">
+                <h3 className="font-display text-2xl md:text-4xl font-bold tracking-tight mb-4 group-hover:text-primary transition-colors">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-muted-foreground max-w-[46ch] leading-relaxed">
+                  {p.description}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-1 border border-border text-[9px] font-display uppercase tracking-widest"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="col-span-4 md:col-span-6 relative">
+                <div className="w-full aspect-video border border-border bg-[linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px] flex flex-col justify-between p-6 group-hover:border-primary/50 group-hover:animate-grid-pan transition-colors tilt">
+                  <div className="flex justify-between font-display text-[10px] text-muted-foreground uppercase tracking-widest">
+                    <span>{p.label}</span>
+                    <span className="text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 font-display">
+                    <div>
+                      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
+                        Stars
+                      </div>
+                      <div className="text-3xl font-bold"><RepoStat repo={p.repo} kind="stars" /></div>
+                    </div>
+                    <div>
+                      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
+                        Forks
+                      </div>
+                      <div className="text-3xl font-bold"><RepoStat repo={p.repo} kind="forks" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Spotlight>
+          </Reveal>
+        ))}
+      </section>
+
+      <section
+        id="now"
+        className="px-4 md:px-8 py-20 md:py-24 border-t border-border grid grid-cols-4 md:grid-cols-12 gap-6"
+      >
+        <div className="col-span-4 md:col-span-3">
+          <div className="font-display text-[10px] uppercase tracking-[0.3em] text-primary mb-3">
+            /Now
+          </div>
+          <div className="font-display text-[10px] uppercase tracking-widest text-muted-foreground">
+            Updated Q3 2026
+          </div>
+        </div>
+        <ul className="col-span-4 md:col-span-9 space-y-4">
+          {NOW.map((n, i) => (
+            <Reveal as="li" key={i} delay={i * 60}>
+              <div className="flex gap-4 border-b border-border pb-4">
+                <span className="font-display text-xs text-primary shrink-0 mt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-sm md:text-base text-foreground/90 leading-relaxed">
+                  {n}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      </section>
+
+      <section
+        id="voices"
+        className="px-4 md:px-8 py-20 md:py-28 border-t border-border bg-white/[0.02]"
+      >
+        <div className="font-display text-[10px] uppercase tracking-[0.3em] text-primary mb-10">
+          {'// Field_Notes.txt'}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
+          {TESTIMONIALS.map((t, i) => (
+            <Reveal key={i} delay={i * 100}>
+              <blockquote className="bg-background p-8 md:p-10 h-full flex flex-col gap-6 hover:bg-primary/5 transition-colors">
+                <span
+                  aria-hidden
+                  className="font-display text-5xl leading-none text-primary/60"
                 >
-                  <span className="text-sm text-body group-hover:text-ink transition-colors leading-snug pr-4">
-                    {post.title}
-                  </span>
-                  <ExternalLink size={13} className="text-muted group-hover:text-ink shrink-0" />
-                </Link>
-              ))}
-            </div>
-          </AnimatedSection>
+                  &ldquo;
+                </span>
+                <p className="text-lg md:text-xl leading-snug text-foreground/95 text-pretty">
+                  {t.quote}
+                </p>
+                <footer className="mt-auto font-display text-[10px] uppercase tracking-widest text-muted-foreground">
+                  — {t.who} · {t.where}
+                </footer>
+              </blockquote>
+            </Reveal>
+          ))}
         </div>
       </section>
-
-      {/* ─── WakaTime ─── */}
-      <section className="py-16 border-t border-hairline/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="section-label mb-6">Coding activity</p>
-          <div className="max-w-md">
-            <WakaTimeStats />
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CTA ─── */}
-      <section className="py-24 border-t border-hairline/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="max-w-xl">
-              <p className="section-label">Let&apos;s talk</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-ink uppercase tracking-[-0.01em] mb-4">
-                Have a project?
-              </h2>
-              <p className="text-base text-body-strong leading-relaxed mb-8">
-                Whether it is a microservices architecture, an event-driven
-                system, or a backend that needs to scale — I am ready.
-              </p>
-              <Link
-                href="mailto:kartikkulkarni1411@gmail.com?subject=Project%20inquiry%20from%20karthik.dev&body=Hi%20Karthik%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project."
-                className="inline-flex items-center gap-2 text-sm uppercase tracking-[1.5px] text-ink border border-ink px-6 py-3 hover:bg-ink hover:text-canvas transition-all duration-300"
-              >
-                Get in touch <ArrowRight size={14} />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-    </div>
+    </>
   );
 }
