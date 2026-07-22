@@ -31,6 +31,8 @@ jobs:
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       - run: npm run build
+        env:
+          BASE_PATH: /portfolio
       - name: Clean old artifacts
         run: |
           ids=$(gh api repos/${{ github.repository }}/actions/artifacts --paginate \
