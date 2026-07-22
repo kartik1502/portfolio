@@ -18,7 +18,7 @@ export function Reveal({
   from?: Direction;
 }) {
   const ref = useRef<HTMLElement | null>(null);
-  const [shown, setShown] = useState(typeof IntersectionObserver === "undefined");
+  const [shown, setShown] = useState(false);
 
   useEffect(() => {
     const el = ref.current;

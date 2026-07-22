@@ -5,6 +5,7 @@ import { PROJECTS, STACK, METRICS, NOW, TESTIMONIALS } from "@/lib/portfolio-dat
 import { RepoStat } from "@/components/RepoStat";
 import { Reveal } from "@/components/Reveal";
 import { Spotlight } from "@/components/Spotlight";
+import { Typewriter } from "@/components/Typewriter";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
             <span className="relative inline-flex size-1.5 rounded-full bg-primary text-primary shadow-[0_0_10px_currentColor] ping-dot" />
             Senior Software Engineer · Java Specialist
           </div>
+          <h2 className="font-display text-xl md:text-3xl font-semibold uppercase tracking-[0.15em] text-foreground mb-6 animate-reveal [animation-delay:150ms]">
+          <Typewriter text="Hi, Karthik Kulkarni" speed={40} delay={500} loop loopPause={2500} />
+          </h2>
           <h1 className="font-display text-5xl md:text-8xl font-extrabold tracking-tighter text-balance leading-[0.9] animate-glitch-hover">
             <span className="text-gradient-flow">ENGINEERING</span> <br />
             <span
