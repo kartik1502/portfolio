@@ -196,3 +196,28 @@ export const BEYOND = [
   { title: "Reading", body: "Currently working through Designing Data-Intensive Applications and Release It! for the second time." },
   { title: "Off-screen", body: "Long walks, cricket, and slowly cooking through a South Indian recipe backlog." },
 ];
+
+export type ChangelogEntry = {
+  date: string;
+  time?: string;
+  title: string;
+  description: string;
+  tags?: string[];
+};
+
+export const CHANGELOG: ChangelogEntry[] = [
+  {
+    date: "2026-07-25",
+    time: "10:30",
+    title: "Dependency management BOM proposal",
+    description: "Audited all 7 service POMs for dependency redundancy, identified scope issues (lombok compile vs provided), missing transitive deps (commons-io, commons-codec), and version drift (SB 3.5.3 vs 3.5.4). Proposed centralized arya-banking-bom and added to platform roadmap.",
+    tags: ["arya-banking", "maven", "pom"],
+  },
+  {
+    date: "2026-07-25",
+    time: "12:15",
+    title: "Admin-service OpenAPI config fix",
+    description: "Added explicit OpenApiConfig.java to admin-service to stop SpringDoc from auto-generating 'host.docker.internal:8089' as the server URL. Explicit server entries set for API Gateway (8085) and direct (8089).",
+    tags: ["arya-banking", "admin-service", "swagger"],
+  },
+];
