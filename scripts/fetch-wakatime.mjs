@@ -6,7 +6,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.WAKATIME_API_KEY;
 
 if (!API_KEY) {
-  console.warn("⚠ WAKATIME_API_KEY not set — skipping WakaTime fetch");
+  console.warn("⚠ WAKATIME_API_KEY not set — writing fallback data");
+  const fallback = {
+    total_seconds: 0,
+    human_readable_total: "—",
+    daily_average: 0,
+    human_readable_daily_average: "—",
+    all_time_total: "—",
+    languages: [],
+    editors: [],
+    range: "last_7_days",
+  };
+  const outPath = path.resolve(__dirname, "../public/wakatime.json");
+  fs.writeFileSync(outPath, JSON.stringify(fallback, null, 2));
   process.exit(0);
 }
 

@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { GridOverlay } from "@/components/GridOverlay";
+import { Providers } from "./providers";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -60,7 +61,7 @@ export default function RootLayout({
         <ScrollToTop />
         <GridOverlay />
         <SiteNav />
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10"><Providers>{children}</Providers></main>
         <SiteFooter />
       </body>
     </html>

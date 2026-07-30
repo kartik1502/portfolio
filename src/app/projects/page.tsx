@@ -5,6 +5,7 @@ import { PROJECTS } from "@/lib/portfolio-data";
 import { RepoStat } from "@/components/RepoStat";
 import { Reveal } from "@/components/Reveal";
 import { SectionSubnav } from "@/components/SectionSubnav";
+import { CodingActivity } from "@/components/CodingActivity";
 
 export default function Projects() {
   return (
@@ -42,6 +43,7 @@ export default function Projects() {
 
       <ModulesSection />
       <CaseStudiesSection />
+      <CodingActivitySection />
     </>
   );
 }
@@ -248,6 +250,26 @@ function CaseStudiesSection() {
             </article>
           </Reveal>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function CodingActivitySection() {
+  return (
+    <section id="coding-activity" className="px-4 md:px-8 py-16 border-t border-border">
+      <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
+        <div className="col-span-4 md:col-span-3">
+          <h2 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
+            Coding_Activity
+          </h2>
+          <p className="mt-2 text-[10px] font-display text-muted-foreground/70 uppercase tracking-widest">
+            via WakaTime · last 7 days
+          </p>
+        </div>
+        <div className="col-span-4 md:col-span-9">
+          <CodingActivity />
+        </div>
       </div>
     </section>
   );
