@@ -1,10 +1,46 @@
 {
-  "total_seconds": 0,
-  "human_readable_total": "—",
-  "daily_average": 0,
-  "human_readable_daily_average": "—",
-  "all_time_total": "—",
-  "languages": [],
-  "editors": [],
+  "total_seconds": 22930.076,
+  "human_readable_total": "6 hrs 22 mins",
+  "daily_average": 4586,
+  "human_readable_daily_average": "1 hr 16 mins",
+  "all_time_total": "0 hrs",
+  "languages": [
+    {
+      "name": "XML",
+      "percent": 40,
+      "total_seconds": 9627.258
+    },
+    {
+      "name": "Java",
+      "percent": 18,
+      "total_seconds": 4387.711
+    },
+    {
+      "name": "Markdown",
+      "percent": 13,
+      "total_seconds": 3126.586
+    },
+    {
+      "name": "TypeScript",
+      "percent": 8,
+      "total_seconds": 1976.259
+    },
+    {
+      "name": "YAML",
+      "percent": 8,
+      "total_seconds": 1910.332
+    },
+    {
+      "name": "Other",
+      "percent": 4,
+      "total_seconds": 899.413
+    }
+  ],
+  "editors": [
+    {
+      "name": "IntelliJ IDEA",
+      "percent": 100
+    }
+  ],
   "range": "last_7_days"
 }
