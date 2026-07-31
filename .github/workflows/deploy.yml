@@ -26,14 +26,11 @@ jobs:
           cache: npm
       - uses: actions/configure-pages@v5
       - run: npm ci
-      - name: Fetch WakaTime stats
-        run: node scripts/fetch-wakatime.mjs
-        env:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       - run: npm run build
         env:
           BASE_PATH: /portfolio
           NEXT_PUBLIC_BASE_PATH: /portfolio
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       - name: Clean old artifacts
         run: |
           ids=$(gh api repos/${{ github.repository }}/actions/artifacts --paginate \

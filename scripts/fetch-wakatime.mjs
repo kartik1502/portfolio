@@ -6,6 +6,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.WAKATIME_API_KEY;
 
 if (!API_KEY) {
+  const existing = path.resolve(__dirname, "../public/wakatime.json");
+  if (fs.existsSync(existing)) {
+    console.warn("⚠ WAKATIME_API_KEY not set — keeping existing wakatime.json");
+    process.exit(0);
+  }
   console.warn("⚠ WAKATIME_API_KEY not set — writing fallback data");
   const fallback = {
     total_seconds: 0,
