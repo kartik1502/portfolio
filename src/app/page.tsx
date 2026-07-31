@@ -6,12 +6,14 @@ import { RepoStat } from "@/components/RepoStat";
 import { Reveal } from "@/components/Reveal";
 import { Spotlight } from "@/components/Spotlight";
 import { Typewriter } from "@/components/Typewriter";
+import { CodingHours } from "@/components/CodingHours";
 
 export default function Home() {
   return (
     <>
       <section id="top" className="px-4 md:px-8 py-24 md:py-40 grid grid-cols-4 md:grid-cols-12 gap-6">
         <div className="col-span-4 md:col-span-8 animate-reveal">
+          <CodingHours />
           <div className="flex items-center gap-3 mb-8 font-display text-[10px] uppercase tracking-[0.25em] text-primary">
             <span className="relative inline-flex size-1.5 rounded-full bg-primary text-primary shadow-[0_0_10px_currentColor] ping-dot" />
             Senior Software Engineer · Java Specialist
@@ -62,7 +64,7 @@ export default function Home() {
         </div>
         <div className="col-span-4 md:col-span-4 flex flex-col justify-end items-start md:items-end animate-reveal [animation-delay:200ms]">
           <div className="font-display text-[10px] leading-relaxed text-muted-foreground uppercase tracking-tighter md:text-right">
-            Role: Senior Software Engineer @ Citi<br />
+            Role: Senior Software Engineer @ HCLTech[Citi]<br />
             Focus: Distributed Payment Systems<br />
             Location: Bengaluru, IN<br />
             Status: Open_To_Opportunities
