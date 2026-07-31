@@ -11,6 +11,7 @@ const LINKS = [
   { href: "/writing", label: "Writing", n: "04" },
   { href: "/changelog", label: "Changelog", n: "05" },
   { href: "/contact", label: "Connect", n: "06" },
+  { href: "/repos", label: "Repos", n: "07" },
 ];
 
 export function SiteNav() {
