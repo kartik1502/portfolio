@@ -136,8 +136,15 @@ export const STACK = [
   "Apache Kafka", "MongoDB", "MySQL", "Docker", "Keycloak", "Redis", "REST", "JUnit",
 ];
 
-export const METRICS = [
-  { value: "2.5y", label: "Production experience", note: "HCLTech · Citi" },
+export type Metric = {
+  value: string;
+  label: string;
+  note: string;
+  dynamic?: boolean;
+};
+
+export const METRICS: Metric[] = [
+  { value: "2.5y", label: "Production experience", note: "HCLTech · Citi", dynamic: true },
   { value: "APAC", label: "Region", note: "Cross-border payments" },
   { value: "2s", label: "Per-txn SLA held", note: "PAS pipeline" },
   { value: "85%", label: "Faster onboarding", note: "Payer ID service" },

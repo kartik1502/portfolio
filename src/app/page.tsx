@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { Spotlight } from "@/components/Spotlight";
 import { Typewriter } from "@/components/Typewriter";
 import { CodingHours } from "@/components/CodingHours";
+import { Tenure } from "@/components/Tenure";
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
             HIGH DENSITY<span className="text-primary animate-caret ml-1">_</span>
           </h1>
           <p className="mt-12 max-w-[52ch] text-lg text-muted-foreground text-pretty">
-            2.5 years building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a 9-repository platform.
+            <Tenure format="long" /> building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a 9-repository platform.
           </p>
           <div className="mt-12 flex items-center gap-4">
             <div className="h-px w-12 bg-primary" />
@@ -107,7 +108,7 @@ export default function Home() {
               {'// Signal.log'}
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95]">
-              What 2.5 years at HCLTech [Citi] <br /> actually moved.
+              What <Tenure format="long" /> at HCLTech [Citi] <br /> actually moved.
             </h2>
           </div>
           <p className="col-span-4 md:col-span-6 md:text-right text-sm text-muted-foreground max-w-[46ch] md:ml-auto">
@@ -123,7 +124,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-display text-3xl md:text-4xl font-extrabold text-primary tracking-tight">
-                    {m.value}
+                    {m.dynamic ? <Tenure format="short" /> : m.value}
                   </div>
                   <div className="mt-1 font-display text-[11px] uppercase tracking-widest">
                     {m.label}

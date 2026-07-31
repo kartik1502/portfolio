@@ -5,13 +5,14 @@ import {
 } from "@/lib/portfolio-data";
 import { Reveal } from "@/components/Reveal";
 import { SectionSubnav } from "@/components/SectionSubnav";
+import { Tenure } from "@/components/Tenure";
 
-const META = [
+const META: Array<{ label: string; value: string | null; tenure?: boolean }> = [
   { label: "Role", value: "Senior Software Engineer" },
   { label: "Stack", value: "Java / Spring / Kafka" },
   { label: "Based", value: "Bengaluru, India" },
   { label: "Mode", value: "Remote · Open" },
-  { label: "Exp", value: "2.5+ years" },
+  { label: "Exp", value: null, tenure: true },
 ];
 
 export default function About() {
@@ -27,7 +28,7 @@ export default function About() {
             <span className="text-primary">& BUILDER</span>
           </h1>
           <p className="max-w-[56ch] text-lg text-muted-foreground text-pretty">
-            Java Developer with 2.5 years of production experience building high-volume payment processing systems at Citi. I specialize in Spring Boot, Spring Data JPA, and event-driven microservices — owning end-to-end delivery from development through production with strict SLAs.
+            Java Developer with <Tenure format="long" /> of production experience building high-volume payment processing systems at Citi. I specialize in Spring Boot, Spring Data JPA, and event-driven microservices — owning end-to-end delivery from development through production with strict SLAs.
           </p>
         </div>
         <div className="col-span-4 md:col-span-4 md:border-l border-border md:pl-6 grid grid-cols-2 md:grid-cols-1 gap-6 content-start animate-reveal [animation-delay:200ms]">
@@ -36,7 +37,16 @@ export default function About() {
               <div className="font-display text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                 {m.label}
               </div>
-              <div className="font-display text-sm">{m.value}</div>
+              <div className="font-display text-sm">
+                {m.tenure ? (
+                  <>
+                    <Tenure format="years" />
+                    + years
+                  </>
+                ) : (
+                  m.value
+                )}
+              </div>
             </div>
           ))}
         </div>
