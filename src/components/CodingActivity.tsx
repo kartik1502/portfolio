@@ -13,7 +13,8 @@ const BAR_SHADES = [
 ];
 
 async function fetchWakatimeStats(): Promise<WakaStats> {
-  const res = await fetch("/wakatime.json");
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const res = await fetch(`${base}/wakatime.json`);
 
   if (!res.ok) {
     throw new Error(`WakaTime data not available: ${res.status}`);
