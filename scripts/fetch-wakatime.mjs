@@ -66,7 +66,6 @@ async function fetchRepoSummaries() {
   const start = new Date(end.getTime() - 6 * 86400000);
   const fmt = (d) => d.toISOString().slice(0, 10);
   const params = new URLSearchParams({ start: fmt(start), end: fmt(end) });
-  for (const r of REPOS) params.append("project", r);
   return fetchJSON(
     `https://wakatime.com/api/v1/users/current/summaries?${params.toString()}`,
   );
@@ -81,7 +80,7 @@ function buildRepoAnalytics(json) {
           seconds: Math.round(p.total_seconds ?? 0),
           color: p.color ?? "",
         }))
-        .filter((p) => p.seconds > 0);
+        .filter((p) => p.seconds > 0 && REPOS.includes(p.name));
       return {
         date: (d.range?.start ?? "").slice(0, 10),
         total: projects.reduce((s, p) => s + p.seconds, 0),
