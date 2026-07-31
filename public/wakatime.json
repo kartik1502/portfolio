@@ -1,39 +1,39 @@
 {
-  "total_seconds": 22930.076,
-  "human_readable_total": "6 hrs 22 mins",
-  "daily_average": 4586,
-  "human_readable_daily_average": "1 hr 16 mins",
+  "total_seconds": 25880.757,
+  "human_readable_total": "7 hrs 11 mins",
+  "daily_average": 5176,
+  "human_readable_daily_average": "1 hr 26 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
-      "name": "XML",
-      "percent": 40,
-      "total_seconds": 9627.258
-    },
-    {
       "name": "Java",
-      "percent": 18,
-      "total_seconds": 4387.711
+      "percent": 26,
+      "total_seconds": 6830.894
     },
     {
-      "name": "Markdown",
-      "percent": 13,
-      "total_seconds": 3126.586
+      "name": "XML",
+      "percent": 23,
+      "total_seconds": 6025.116
     },
     {
       "name": "TypeScript",
-      "percent": 8,
-      "total_seconds": 1976.259
+      "percent": 16,
+      "total_seconds": 4217.779
+    },
+    {
+      "name": "Markdown",
+      "percent": 12,
+      "total_seconds": 3126.586
     },
     {
       "name": "YAML",
-      "percent": 8,
-      "total_seconds": 1910.332
+      "percent": 10,
+      "total_seconds": 2604.115
     },
     {
-      "name": "Other",
-      "percent": 4,
-      "total_seconds": 899.413
+      "name": "JSON",
+      "percent": 3,
+      "total_seconds": 816.36
     }
   ],
   "editors": [
