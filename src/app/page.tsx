@@ -34,7 +34,7 @@ export default function Home() {
             HIGH DENSITY<span className="text-primary animate-caret ml-1">_</span>
           </h1>
           <p className="mt-12 max-w-[52ch] text-lg text-muted-foreground text-pretty">
-            <Tenure format="long" /> building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a 9-repository platform.
+            <Tenure format="long" /> building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a 10-repository banking platform with a transactional outbox.
           </p>
           <div className="mt-12 flex items-center gap-4">
             <div className="h-px w-12 bg-primary" />

@@ -3,34 +3,36 @@ export const PROJECTS = [
     n: "01",
     title: "Arya Banking",
     description:
-      "Event-driven banking platform with 7 microservices using Kafka-based async communication. Auth, user, admin, API gateway, and Config server services with Dockerized deployment.",
-    tags: ["Spring Boot", "Kafka", "Keycloak", "Docker", "Microservices"],
+      "Event-driven banking platform — 10 repositories, 6 Spring Boot services (user, auth, admin, API gateway, config server, Eureka) with Kafka-based async communication, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, and MongoDB persistence. Includes a 100+ page documentation site.",
+    tags: ["Spring Boot", "Kafka", "Outbox Pattern", "Avro", "Keycloak", "Vault", "MongoDB", "Docker", "Microservices"],
     href: "https://github.com/Event-Based-Banking-Application",
     repo: "org:Event-Based-Banking-Application",
     label: "MODULE_ARYA_BANKING",
     domain: "Fintech",
     year: "2024",
     problem:
-      "Coordinating 7 banking services synchronously created cascading failures. A downed auth service could freeze onboarding, transactions, and admin actions at once.",
+      "Synchronous service coordination created cascading failures — a downed auth service froze onboarding and admin actions at once. Event publishing was also unreliable: a failed Kafka write after the DB commit meant the state change was lost forever (dual-write problem).",
     approach:
-      "Broke tight coupling with Kafka topics per bounded context. Services publish domain events and consume what they need — no direct HTTP dependencies between core flows.",
+      "Kafka topics per bounded context with no direct HTTP dependencies between core flows. Built a transactional outbox starter library — the business change and outbox record commit in one MongoDB transaction, then a scheduled relay publishes to Kafka through Schema Registry with bounded retries, guaranteeing at-least-once delivery. All artifacts share Avro contracts and are published via GitHub Packages.",
     impact: [
-      "Zero cascading outages across 7 services in local load runs",
-      "Independent scaling of auth vs. transaction consumers",
+      "Transactional outbox guarantees at-least-once event delivery — no dual-write loss",
+      "Avro contracts on Confluent Schema Registry make schema evolution safe",
+      "10-repo org with shared libraries and a 100+ page docs site",
       "New service onboarding reduced to producer/consumer wiring",
     ],
     architecture: [
-      "  Client → [API Gateway] → [Auth] ⇄ Keycloak",
-      "                       ↓",
-      "              ┌────────┼─────────┐",
-      "              ▼        ▼         ▼",
-      "           [User]  [Admin]   [Payments]",
-      "              │        │         │",
-      "              └────────┼─────────┘",
-      "                       ▼",
-      "                 ═══ Kafka ═══",
-      "                       ▼",
-      "                 [Config Server]",
+      "  Client → [API Gateway] ⇄ Keycloak",
+      "                │",
+      "                ▼",
+      "         [Eureka Registry]",
+      "         ┌───────┼────────┐",
+      "         ▼       ▼        ▼",
+      "      [User]  [Auth]   [Admin]",
+      "         │       │        │",
+      "      MongoDB  Keycloak  Vault",
+      "         │",
+      "         ▼",
+      "  [Outbox] → Kafka → [Schema Registry]",
     ],
   },
   {
@@ -153,7 +155,7 @@ export const METRICS: Metric[] = [
 ];
 
 export const NOW = [
-  "Architecting a 9-repository event-driven platform on Kafka + Spring Boot.",
+  "Architecting a 10-repository event-driven banking platform — Kafka, transactional outbox, Avro schemas, and a live 100+ page docs site.",
   "Sharpening system design fundamentals — CAP, backpressure, idempotent consumers.",
   "Writing long-form on Kafka, Spring Batch, and microservice communication.",
   "Open to senior backend roles — remote or Bengaluru.",
@@ -213,6 +215,18 @@ export type ChangelogEntry = {
 };
 
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    date: "2026-08-01",
+    title: "Transactional outbox starter library",
+    description: "Created arya-banking-outbox-service v1.0.0 — a Spring Boot starter implementing the transactional outbox pattern. Outbox records persist to MongoDB in the same transaction as the business change, then a scheduled relay publishes to Kafka with bounded retries (PENDING → COMPLETED / RETRY_PENDING → FAILED), guaranteeing at-least-once delivery. Avro events published via OutboxKafkaEvent against Confluent Schema Registry.",
+    tags: ["arya-banking", "outbox", "kafka"],
+  },
+  {
+    date: "2026-08-01",
+    title: "Internal Maven artifacts on GitHub Packages",
+    description: "Standed up the GitHub Packages Maven registry and published arya-banking-common 1.2.3 and arya-banking-outbox-service 1.0.0 with idempotent deploy workflows — a pre-deploy probe skips re-publishing versions that already exist. Services now consume shared Avro schemas and outbox events as internal artifacts.",
+    tags: ["arya-banking", "maven", "github-packages"],
+  },
   {
     date: "2026-07-25",
     time: "10:30",
