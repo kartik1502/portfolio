@@ -1,51 +1,62 @@
 {
-  "updatedAt": "2026-08-01T08:44:22.656Z",
+  "updatedAt": "2026-08-01T08:49:21.194Z",
   "start": "2026-07-27",
   "end": "2026-07-31",
   "range": "last_7_days",
   "repos": [
     {
+      "name": "arya-banking-outbox-service",
+      "seconds": 7677,
+      "percent": 41.8,
+      "color": ""
+    },
+    {
       "name": "arya-banking",
       "seconds": 3350,
-      "percent": 31.3,
+      "percent": 18.2,
       "color": ""
     },
     {
       "name": "arya-banking-user-service",
       "seconds": 2356,
-      "percent": 22,
+      "percent": 12.8,
       "color": ""
     },
     {
       "name": "arya-banking-admin-service",
       "seconds": 2080,
-      "percent": 19.4,
+      "percent": 11.3,
       "color": ""
     },
     {
       "name": "arya-banking-common",
       "seconds": 1934,
-      "percent": 18.1,
+      "percent": 10.5,
       "color": ""
     },
     {
       "name": "arya-banking-auth-service",
       "seconds": 538,
-      "percent": 5,
+      "percent": 2.9,
       "color": ""
     },
     {
       "name": "arya-banking-infra",
       "seconds": 451,
-      "percent": 4.2,
+      "percent": 2.5,
       "color": ""
     }
   ],
   "daily": [
     {
       "date": "2026-07-27",
-      "total": 2939,
+      "total": 6040,
       "projects": [
+        {
+          "name": "arya-banking-outbox-service",
+          "seconds": 3101,
+          "color": ""
+        },
         {
           "name": "arya-banking-admin-service",
           "seconds": 1958,
@@ -75,8 +86,13 @@
     },
     {
       "date": "2026-07-28",
-      "total": 409,
+      "total": 1567,
       "projects": [
+        {
+          "name": "arya-banking-outbox-service",
+          "seconds": 1158,
+          "color": ""
+        },
         {
           "name": "arya-banking-auth-service",
           "seconds": 245,
@@ -101,11 +117,16 @@
     },
     {
       "date": "2026-07-29",
-      "total": 1585,
+      "total": 2181,
       "projects": [
         {
           "name": "arya-banking-common",
           "seconds": 1288,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-outbox-service",
+          "seconds": 596,
           "color": ""
         },
         {
@@ -122,8 +143,13 @@
     },
     {
       "date": "2026-07-30",
-      "total": 1494,
+      "total": 3271,
       "projects": [
+        {
+          "name": "arya-banking-outbox-service",
+          "seconds": 1777,
+          "color": ""
+        },
         {
           "name": "arya-banking-user-service",
           "seconds": 1108,
@@ -143,11 +169,16 @@
     },
     {
       "date": "2026-07-31",
-      "total": 4282,
+      "total": 5327,
       "projects": [
         {
           "name": "arya-banking",
           "seconds": 3350,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-outbox-service",
+          "seconds": 1045,
           "color": ""
         },
         {
