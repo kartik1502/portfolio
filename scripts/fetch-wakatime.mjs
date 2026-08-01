@@ -20,6 +20,7 @@ const REPOS = [
   "arya-banking-infra",
   "arya-banking-service-registry",
   "arya-banking-user-service",
+  "arya-banking-outbox-service"
 ];
 
 const FALLBACK_STATS = {
