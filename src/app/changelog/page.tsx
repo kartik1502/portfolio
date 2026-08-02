@@ -4,9 +4,10 @@ import { useState, useMemo } from "react";
 import { CHANGELOG } from "@/lib/portfolio-data";
 import { Reveal } from "@/components/Reveal";
 
-type View = "daily" | "weekly" | "monthly";
+type View = "all" | "daily" | "weekly" | "monthly";
 
 const VIEWS: { value: View; label: string }[] = [
+  { value: "all", label: "All" },
   { value: "daily", label: "Daily" },
   { value: "weekly", label: "Weekly" },
   { value: "monthly", label: "Monthly" },
@@ -31,16 +32,42 @@ function getPeriod(dateStr: string, view: View): string {
     }
     case "monthly":
       return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+    case "all":
+      return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  }
+}
+
+function isInPeriod(dateStr: string, view: View): boolean {
+  if (view === "all") return true;
+  const d = new Date(dateStr + "T00:00:00");
+  const now = new Date();
+  switch (view) {
+    case "daily":
+      return d.toDateString() === now.toDateString();
+    case "weekly": {
+      const start = new Date(now);
+      start.setHours(0, 0, 0, 0);
+      start.setDate(now.getDate() - now.getDay());
+      const end = new Date(start);
+      end.setDate(start.getDate() + 6);
+      return d >= start && d <= end;
+    }
+    case "monthly":
+      return (
+        d.getFullYear() === now.getFullYear() &&
+        d.getMonth() === now.getMonth()
+      );
   }
 }
 
 export default function Changelog() {
-  const [view, setView] = useState<View>("daily");
+  const [view, setView] = useState<View>("all");
   const [open, setOpen] = useState(true);
 
   const groups = useMemo(() => {
     const map = new Map<string, typeof CHANGELOG>();
     for (const entry of CHANGELOG) {
+      if (!isInPeriod(entry.date, view)) continue;
       const key = getPeriod(entry.date, view);
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(entry);
@@ -139,9 +166,9 @@ export default function Changelog() {
                 </div>
               </Reveal>
             ))}
-            {CHANGELOG.length === 0 && (
+            {groups.length === 0 && (
               <p className="text-sm text-muted-foreground italic">
-                No entries yet. Work logs will appear here.
+                No activity in this period.
               </p>
             )}
           </div>
