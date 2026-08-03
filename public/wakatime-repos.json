@@ -1,55 +1,55 @@
 {
-  "updatedAt": "2026-08-02T07:49:35.621Z",
+  "updatedAt": "2026-08-03T09:41:49.699Z",
   "start": "2026-07-27",
-  "end": "2026-07-31",
+  "end": "2026-08-01",
   "range": "last_7_days",
   "repos": [
     {
       "name": "arya-banking-outbox-service",
       "seconds": 10955,
-      "percent": 29.5,
+      "percent": 28.5,
       "color": ""
     },
     {
       "name": "arya-banking-user-service",
       "seconds": 8794,
-      "percent": 23.7,
+      "percent": 22.9,
       "color": ""
     },
     {
       "name": "arya-banking",
       "seconds": 7151,
-      "percent": 19.3,
+      "percent": 18.6,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-admin-service",
+      "seconds": 3583,
+      "percent": 9.3,
       "color": ""
     },
     {
       "name": "arya-banking-common",
       "seconds": 2822,
-      "percent": 7.6,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-admin-service",
-      "seconds": 2430,
-      "percent": 6.6,
+      "percent": 7.3,
       "color": ""
     },
     {
       "name": "arya-banking-infra",
-      "seconds": 2211,
+      "seconds": 2318,
       "percent": 6,
       "color": ""
     },
     {
       "name": "arya-banking-auth-service",
-      "seconds": 2119,
+      "seconds": 2209,
       "percent": 5.7,
       "color": ""
     },
     {
       "name": "arya-banking-configs",
       "seconds": 593,
-      "percent": 1.6,
+      "percent": 1.5,
       "color": ""
     }
   ],
@@ -175,7 +175,7 @@
     },
     {
       "date": "2026-07-31",
-      "total": 24016,
+      "total": 24123,
       "projects": [
         {
           "name": "arya-banking-user-service",
@@ -194,7 +194,7 @@
         },
         {
           "name": "arya-banking-infra",
-          "seconds": 1760,
+          "seconds": 1867,
           "color": ""
         },
         {
@@ -215,6 +215,22 @@
         {
           "name": "arya-banking-admin-service",
           "seconds": 350,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "total": 1243,
+      "projects": [
+        {
+          "name": "arya-banking-admin-service",
+          "seconds": 1153,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-auth-service",
+          "seconds": 90,
           "color": ""
         }
       ]
