@@ -1,39 +1,39 @@
 {
-  "total_seconds": 49408.914,
-  "human_readable_total": "13 hrs 43 mins",
-  "daily_average": 8235,
-  "human_readable_daily_average": "2 hrs 17 mins",
+  "total_seconds": 12390.144,
+  "human_readable_total": "3 hrs 26 mins",
+  "daily_average": 3098,
+  "human_readable_daily_average": "51 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 31,
-      "total_seconds": 16001.258
+      "percent": 45,
+      "total_seconds": 5589.241
     },
     {
-      "name": "TypeScript",
-      "percent": 16,
-      "total_seconds": 8305.134
+      "name": "Groovy",
+      "percent": 27,
+      "total_seconds": 3309.113
     },
     {
-      "name": "XML",
-      "percent": 14,
-      "total_seconds": 7058.879
-    },
-    {
-      "name": "YAML",
+      "name": "Java Properties",
       "percent": 12,
-      "total_seconds": 6438.307
+      "total_seconds": 1494.19
     },
     {
       "name": "Markdown",
       "percent": 7,
-      "total_seconds": 3855.586
+      "total_seconds": 832.28
     },
     {
-      "name": "JavaScript",
+      "name": "YAML",
       "percent": 6,
-      "total_seconds": 3251.157
+      "total_seconds": 736.185
+    },
+    {
+      "name": "GitIgnore file",
+      "percent": 1,
+      "total_seconds": 168.359
     }
   ],
   "editors": [
