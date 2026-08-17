@@ -1,39 +1,39 @@
 {
-  "total_seconds": 12390.144,
-  "human_readable_total": "3 hrs 26 mins",
-  "daily_average": 3098,
-  "human_readable_daily_average": "51 mins",
+  "total_seconds": 12441.92,
+  "human_readable_total": "3 hrs 27 mins",
+  "daily_average": 12442,
+  "human_readable_daily_average": "3 hrs 27 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 45,
-      "total_seconds": 5589.241
+      "percent": 69,
+      "total_seconds": 9216.578
     },
     {
-      "name": "Groovy",
-      "percent": 27,
-      "total_seconds": 3309.113
+      "name": "JSON",
+      "percent": 8,
+      "total_seconds": 1014.847
     },
     {
-      "name": "Java Properties",
-      "percent": 12,
-      "total_seconds": 1494.19
+      "name": "Other",
+      "percent": 7,
+      "total_seconds": 962.182
     },
     {
       "name": "Markdown",
       "percent": 7,
-      "total_seconds": 832.28
+      "total_seconds": 932.656
     },
     {
       "name": "YAML",
-      "percent": 6,
-      "total_seconds": 736.185
+      "percent": 4,
+      "total_seconds": 494.507
     },
     {
-      "name": "GitIgnore file",
-      "percent": 1,
-      "total_seconds": 168.359
+      "name": "Avro Schema",
+      "percent": 3,
+      "total_seconds": 424.286
     }
   ],
   "editors": [
