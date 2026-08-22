@@ -1,39 +1,39 @@
 {
-  "total_seconds": 12441.92,
-  "human_readable_total": "3 hrs 27 mins",
-  "daily_average": 12442,
-  "human_readable_daily_average": "3 hrs 27 mins",
+  "total_seconds": 18842.116,
+  "human_readable_total": "5 hrs 14 mins",
+  "daily_average": 18842,
+  "human_readable_daily_average": "5 hrs 14 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 69,
-      "total_seconds": 9216.578
-    },
-    {
-      "name": "JSON",
-      "percent": 8,
-      "total_seconds": 1014.847
-    },
-    {
-      "name": "Other",
-      "percent": 7,
-      "total_seconds": 962.182
-    },
-    {
-      "name": "Markdown",
-      "percent": 7,
-      "total_seconds": 932.656
+      "percent": 47,
+      "total_seconds": 8839.595
     },
     {
       "name": "YAML",
-      "percent": 4,
-      "total_seconds": 494.507
+      "percent": 12,
+      "total_seconds": 2310.345
     },
     {
-      "name": "Avro Schema",
-      "percent": 3,
-      "total_seconds": 424.286
+      "name": "JSON",
+      "percent": 10,
+      "total_seconds": 1859.863
+    },
+    {
+      "name": "PowerShell",
+      "percent": 9,
+      "total_seconds": 1748.152
+    },
+    {
+      "name": "AvroIDL",
+      "percent": 7,
+      "total_seconds": 1402.833
+    },
+    {
+      "name": "Text",
+      "percent": 4,
+      "total_seconds": 796.981
     }
   ],
   "editors": [
