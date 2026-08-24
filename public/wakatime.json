@@ -1,28 +1,28 @@
 {
-  "total_seconds": 18842.116,
-  "human_readable_total": "5 hrs 14 mins",
-  "daily_average": 18842,
-  "human_readable_daily_average": "5 hrs 14 mins",
+  "total_seconds": 20918.567,
+  "human_readable_total": "5 hrs 48 mins",
+  "daily_average": 10459,
+  "human_readable_daily_average": "2 hrs 54 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 47,
-      "total_seconds": 8839.595
+      "percent": 52,
+      "total_seconds": 10916.046
     },
     {
       "name": "YAML",
-      "percent": 12,
+      "percent": 11,
       "total_seconds": 2310.345
     },
     {
       "name": "JSON",
-      "percent": 10,
+      "percent": 9,
       "total_seconds": 1859.863
     },
     {
       "name": "PowerShell",
-      "percent": 9,
+      "percent": 8,
       "total_seconds": 1748.152
     },
     {
