@@ -3,8 +3,8 @@ export const PROJECTS = [
     n: "01",
     title: "Arya Banking",
     description:
-      "Event-driven banking platform — 10 repositories, 6 Spring Boot services (user, auth, admin, API gateway, config server, Eureka) with Kafka-based async communication, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, and MongoDB persistence. Includes a 100+ page documentation site.",
-    tags: ["Spring Boot", "Kafka", "Outbox Pattern", "Avro", "Keycloak", "Vault", "MongoDB", "Docker", "Microservices"],
+      "Event-driven banking platform — 10 repositories, 6 Spring Boot services (user, auth, admin, API gateway, config server, Eureka) with Kafka-based async communication, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, MongoDB persistence, and Spring AOP for cross-cutting concerns. Includes a 100+ page documentation site.",
+    tags: ["Spring Boot", "Kafka", "Outbox Pattern", "Avro", "Keycloak", "Vault", "MongoDB", "Docker", "Microservices", "Spring AOP"],
     href: "https://github.com/Event-Based-Banking-Application",
     repo: "org:Event-Based-Banking-Application",
     label: "MODULE_ARYA_BANKING",
@@ -17,6 +17,7 @@ export const PROJECTS = [
     impact: [
       "Transactional outbox guarantees at-least-once event delivery — no dual-write loss",
       "Avro contracts on Confluent Schema Registry make schema evolution safe",
+      "Spring AOP for cross-cutting concerns (EventContext ThreadLocal cleanup across Kafka consumers)",
       "10-repo org with shared libraries and a 100+ page docs site",
       "New service onboarding reduced to producer/consumer wiring",
     ],
@@ -155,7 +156,7 @@ export const METRICS: Metric[] = [
 ];
 
 export const NOW = [
-  "Architecting a 10-repository event-driven banking platform — Kafka, transactional outbox, Avro schemas, and a live 100+ page docs site.",
+  "Architecting a 10-repository event-driven banking platform — Kafka, transactional outbox, Avro schemas, Spring AOP, and a live 100+ page docs site.",
   "Sharpening system design fundamentals — CAP, backpressure, idempotent consumers.",
   "Writing long-form on Kafka, Spring Batch, and microservice communication.",
   "Open to senior backend roles — remote or Bengaluru.",
@@ -196,7 +197,7 @@ export const TOOLBOX: { group: string; items: string[] }[] = [
   { group: "Frameworks", items: ["Spring Boot", "Spring Cloud", "Spring Security", "Spring Batch", "JPA / Hibernate"] },
   { group: "Data & Messaging", items: ["Apache Kafka", "MongoDB", "MySQL", "Redis"] },
   { group: "Platform", items: ["Docker", "Keycloak", "Eureka", "Spring Cloud Gateway", "Feign"] },
-  { group: "Practice", items: ["Event-driven design", "Microservices", "REST APIs", "TDD / JUnit", "Observability"] },
+  { group: "Practice", items: ["Event-driven design", "Microservices", "Spring AOP", "REST APIs", "TDD / JUnit", "Observability"] },
 ];
 
 export const BEYOND = [
@@ -215,6 +216,13 @@ export type ChangelogEntry = {
 };
 
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    date: "2026-08-30",
+    time: "14:00",
+    title: "Common module v1.2.5 — EventContext AOP auto-clearing",
+    description: "Added EventContextAop aspect in arya-banking-common to automatically clear ThreadLocal-based EventContext (correlationId, causedEventId) after every @KafkaListener method execution. Eliminates ThreadLocal memory leaks and cross-message context pollution in Kafka consumer thread pools. Enabled @EnableAspectJAutoProxy in user-service. First production AOP aspect shipped across the platform.",
+    tags: ["arya-banking", "common", "aop", "kafka", "threadlocal"],
+  },
   {
     date: "2026-08-29",
     time: "18:00",
