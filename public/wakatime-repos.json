@@ -1,97 +1,44 @@
 {
-  "updatedAt": "2026-08-24T06:55:05.864Z",
-  "start": "2026-08-21",
-  "end": "2026-08-22",
+  "updatedAt": "2026-08-29T13:31:00.134Z",
+  "start": "2026-08-22",
+  "end": "2026-08-28",
   "range": "last_7_days",
   "repos": [
     {
-      "name": "arya-banking-common",
-      "seconds": 7293,
-      "percent": 34.8,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-infra",
-      "seconds": 5387,
-      "percent": 25.7,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-api-gateway",
-      "seconds": 2768,
-      "percent": 13.2,
+      "name": "arya-banking-user-service",
+      "seconds": 6905,
+      "percent": 37.7,
       "color": ""
     },
     {
       "name": "arya-banking-auth-service",
-      "seconds": 2397,
-      "percent": 11.4,
+      "seconds": 6186,
+      "percent": 33.7,
       "color": ""
     },
     {
-      "name": "arya-banking-user-service",
-      "seconds": 1946,
-      "percent": 9.3,
+      "name": "arya-banking-common",
+      "seconds": 4243,
+      "percent": 23.1,
       "color": ""
     },
     {
-      "name": "arya-banking-admin-service",
-      "seconds": 845,
+      "name": "arya-banking-api-gateway",
+      "seconds": 740,
       "percent": 4,
       "color": ""
     },
     {
-      "name": "arya-banking-outbox-service",
-      "seconds": 318,
-      "percent": 1.5,
+      "name": "arya-banking-infra",
+      "seconds": 256,
+      "percent": 1.4,
       "color": ""
     }
   ],
   "daily": [
     {
-      "date": "2026-08-21",
-      "total": 18877,
-      "projects": [
-        {
-          "name": "arya-banking-common",
-          "seconds": 6838,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-infra",
-          "seconds": 5387,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-api-gateway",
-          "seconds": 2768,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-auth-service",
-          "seconds": 1872,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-user-service",
-          "seconds": 849,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-admin-service",
-          "seconds": 845,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-outbox-service",
-          "seconds": 318,
-          "color": ""
-        }
-      ]
-    },
-    {
       "date": "2026-08-22",
-      "total": 2077,
+      "total": 2172,
       "projects": [
         {
           "name": "arya-banking-user-service",
@@ -100,12 +47,69 @@
         },
         {
           "name": "arya-banking-auth-service",
-          "seconds": 525,
+          "seconds": 620,
           "color": ""
         },
         {
           "name": "arya-banking-common",
           "seconds": 455,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "total": 5868,
+      "projects": [
+        {
+          "name": "arya-banking-auth-service",
+          "seconds": 3152,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-user-service",
+          "seconds": 1684,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-common",
+          "seconds": 907,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-api-gateway",
+          "seconds": 125,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "total": 10290,
+      "projects": [
+        {
+          "name": "arya-banking-user-service",
+          "seconds": 4124,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-common",
+          "seconds": 2881,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-auth-service",
+          "seconds": 2414,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-api-gateway",
+          "seconds": 615,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-infra",
+          "seconds": 256,
           "color": ""
         }
       ]
