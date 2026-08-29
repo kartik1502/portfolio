@@ -216,6 +216,41 @@ export type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    date: "2026-08-29",
+    time: "18:00",
+    title: "Auth-service Kafka event integration",
+    description: "Added Kafka event listeners and producers to auth-service: KafkaListenerConfig with @KafkaListener for user events, UserEventProducer for publishing UserCreateEvent and UserLockEvent to Kafka with Avro serialization, and UserUpdateEventListener consuming user update events. Updated KeyCloakServiceImpl with enhanced Keycloak user management. Services now emit and consume user lifecycle events via Kafka topics.",
+    tags: ["arya-banking", "auth-service", "kafka", "avro"],
+  },
+  {
+    date: "2026-08-29",
+    time: "17:50",
+    title: "Common module v1.2.3 — Event metadata & correlation IDs",
+    description: "Released arya-banking-common 1.2.3 with new correlation ID utilities: CorrelationIdContext (thread-local correlation ID propagation), EventContext (event processing context holder), EventMetadataFactory (standardized EventMetadata creation with trace IDs), and GsonParser (JSON-Avro parsing helper). Updated EventMetadata.avdl schema and KafkaConstants with new topic definitions. Published to GitHub Packages Maven registry.",
+    tags: ["arya-banking", "common", "avro", "kafka", "correlation-id"],
+  },
+  {
+    date: "2026-08-29",
+    time: "17:45",
+    title: "User-service Kafka consumer & outbox integration",
+    description: "Implemented UserEventListeners with @KafkaListener for consuming user events from auth-service. Added UserValidator for input validation. Updated UserServiceImpl to publish UserCreateEvent via transactional outbox pattern when creating users. Integrated with arya-banking-outbox-service for guaranteed at-least-once event delivery. User registration now triggers downstream account creation via event choreography.",
+    tags: ["arya-banking", "user-service", "kafka", "outbox", "choreography"],
+  },
+  {
+    date: "2026-08-22",
+    time: "22:10",
+    title: "Admin-service method security & Vault policy operations",
+    description: "Added MethodSecurityConfig with @EnableMethodSecurity for annotation-based access control (@PreAuthorize, @PostAuthorize). Implemented VaultPolicyServiceImpl with CRUD operations for Vault policies (create, read, update, delete, list). Added KeycloakRoleMapperImpl and VaultResponseMapperImpl for DTO mapping. Admin service now enforces role-based access on sensitive operations and manages Vault policies programmatically.",
+    tags: ["arya-banking", "admin-service", "security", "vault", "keycloak"],
+  },
+  {
+    date: "2026-08-22",
+    time: "22:00",
+    title: "API Gateway correlation ID propagation",
+    description: "Implemented CorrelationIdGlobalFilter as a Spring Cloud Gateway filter to extract or generate correlation IDs (X-Correlation-ID header) and propagate them downstream to all microservices. Added request/response logging with correlation IDs for distributed tracing. Gateway now acts as the correlation ID entry point for the entire platform.",
+    tags: ["arya-banking", "api-gateway", "correlation-id", "distributed-tracing"],
+  },
+  {
     date: "2026-08-01",
     title: "Transactional outbox starter library",
     description: "Created arya-banking-outbox-service v1.0.0 — a Spring Boot starter implementing the transactional outbox pattern. Outbox records persist to MongoDB in the same transaction as the business change, then a scheduled relay publishes to Kafka with bounded retries (PENDING → COMPLETED / RETRY_PENDING → FAILED), guaranteeing at-least-once delivery. Avro events published via OutboxKafkaEvent against Confluent Schema Registry.",
