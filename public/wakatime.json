@@ -1,49 +1,49 @@
 {
-  "total_seconds": 26295.921,
-  "human_readable_total": "7 hrs 18 mins",
-  "daily_average": 8765,
-  "human_readable_daily_average": "2 hrs 26 mins",
+  "total_seconds": 23289.449,
+  "human_readable_total": "6 hrs 28 mins",
+  "daily_average": 7763,
+  "human_readable_daily_average": "2 hrs 9 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 58,
-      "total_seconds": 15951.324
+      "percent": 64,
+      "total_seconds": 15586.34
     },
     {
-      "name": "YAML",
-      "percent": 8,
-      "total_seconds": 2310.345
+      "name": "TypeScript",
+      "percent": 7,
+      "total_seconds": 1783.34
     },
     {
       "name": "JSON",
       "percent": 7,
-      "total_seconds": 1859.863
+      "total_seconds": 1590.055
     },
     {
-      "name": "PowerShell",
+      "name": "Markdown",
       "percent": 6,
-      "total_seconds": 1748.152
+      "total_seconds": 1461.044
     },
     {
-      "name": "AvroIDL",
+      "name": "XML",
       "percent": 6,
-      "total_seconds": 1744.909
+      "total_seconds": 1457.867
     },
     {
       "name": "Other",
-      "percent": 5,
-      "total_seconds": 1348.73
+      "percent": 4,
+      "total_seconds": 883.933
     }
   ],
   "editors": [
     {
       "name": "IntelliJ IDEA",
-      "percent": 96
+      "percent": 93
     },
     {
       "name": "Opencode Cli",
-      "percent": 4
+      "percent": 7
     }
   ],
   "range": "last_7_days"
