@@ -245,13 +245,6 @@ export const CHANGELOG: ChangelogEntry[] = [
     tags: ["arya-banking", "user-service", "auth-service", "admin-service", "outbox-service"],
   },
   {
-    date: "2026-09-06",
-    time: "00:00",
-    title: "Documentation site updated for v2.0.0 architecture",
-    description: "Updated 10 docs pages and 5 READMEs to reflect the new modular common library, BOM, and metadata-loader repos. Org README updated with BOM and metadata-loader in the repositories table. All docs now reference module-specific packages and BOM-first dependency consumption.",
-    tags: ["arya-banking", "docs", "readme"],
-  },
-  {
     date: "2026-08-30",
     time: "14:00",
     title: "Common module v1.2.5 — EventContext AOP auto-clearing",
