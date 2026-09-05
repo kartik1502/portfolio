@@ -3,7 +3,7 @@ export const PROJECTS = [
     n: "01",
     title: "Arya Banking",
     description:
-      "Event-driven banking platform — 10 repositories, 6 Spring Boot services (user, auth, admin, API gateway, config server, Eureka) with Kafka-based async communication, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, MongoDB persistence, and Spring AOP for cross-cutting concerns. Includes a 100+ page documentation site.",
+      "Event-driven banking platform — 14 repositories, 6 Spring Boot services with Kafka-based async communication, a multi-module shared library (core, mongo, kafka, feign, oauth2), a BOM for centralized dependency management, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, MongoDB persistence, and Spring AOP for cross-cutting concerns. Includes a 100+ page documentation site.",
     tags: ["Spring Boot", "Kafka", "Outbox Pattern", "Avro", "Keycloak", "Vault", "MongoDB", "Docker", "Microservices", "Spring AOP"],
     href: "https://github.com/Event-Based-Banking-Application",
     repo: "org:Event-Based-Banking-Application",
@@ -18,8 +18,8 @@ export const PROJECTS = [
       "Transactional outbox guarantees at-least-once event delivery — no dual-write loss",
       "Avro contracts on Confluent Schema Registry make schema evolution safe",
       "Spring AOP for cross-cutting concerns (EventContext ThreadLocal cleanup across Kafka consumers)",
-      "10-repo org with shared libraries and a 100+ page docs site",
-      "New service onboarding reduced to producer/consumer wiring",
+      "14-repo org with modular shared library (5 modules) and BOM",
+      "New service onboarding reduced to BOM import + module dependency declaration",
     ],
     architecture: [
       "  Client → [API Gateway] ⇄ Keycloak",
@@ -216,6 +216,41 @@ export type ChangelogEntry = {
 };
 
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    date: "2026-09-06",
+    time: "02:00",
+    title: "Common library modularized into 5 independent modules",
+    description: "Refactored arya-banking-common from a monolithic Spring Boot app into a multi-module reactor with 5 independent modules: core (domain models, exceptions, DTOs), mongo (MongoDB config), kafka (Kafka/Avro support, Avro IDL schemas), feign (Feign client config), and oauth2 (OAuth2 client credentials). Each module publishes as a separate artifact to GitHub Packages. Removed spring-boot-starter-parent, switched to standalone reactor POM. All 4 consuming services (user, auth, admin, outbox) migrated to use the new modular structure.",
+    tags: ["arya-banking", "common", "maven", "modular"],
+  },
+  {
+    date: "2026-09-06",
+    time: "01:30",
+    title: "BOM repository created with centralized dependency management",
+    description: "Created arya-banking-bom — a standalone Bill of Materials repository that centralizes versions for all 5 common modules, outbox-service, and third-party dependencies (lombok, mapstruct, gson, avro, confluent, commons-io). Imports spring-boot-dependencies and spring-cloud-dependencies BOMs. Services now import the BOM and declare module dependencies without versions. Published v2.0.0 to GitHub Packages.",
+    tags: ["arya-banking", "bom", "maven", "dependency-management"],
+  },
+  {
+    date: "2026-09-06",
+    time: "01:00",
+    title: "Metadata loader extracted to standalone repository",
+    description: "Extracted MetadataInitializer and MetadataLoaderApplication from arya-banking-common into a separate repository (arya-banking-common-metadata-loader). Standalone Spring Boot app that depends on the core module and runs independently against MongoDB and Vault. No longer bundled in the common library build.",
+    tags: ["arya-banking", "metadata-loader", "standalone"],
+  },
+  {
+    date: "2026-09-06",
+    time: "00:30",
+    title: "All services migrated to BOM and modular common",
+    description: "Migrated user-service, auth-service, admin-service, and outbox-service to use arya-banking-bom for dependency management. Updated all Java imports from org.arya.banking.common.* to module-specific packages (core, kafka, mongo, feign). Added build pipelines (build.yml) to all services. Removed SonarCloud analysis workflows. Outbox-service version bumped to 2.0.0.",
+    tags: ["arya-banking", "user-service", "auth-service", "admin-service", "outbox-service"],
+  },
+  {
+    date: "2026-09-06",
+    time: "00:00",
+    title: "Documentation site updated for v2.0.0 architecture",
+    description: "Updated 10 docs pages and 5 READMEs to reflect the new modular common library, BOM, and metadata-loader repos. Org README updated with BOM and metadata-loader in the repositories table. All docs now reference module-specific packages and BOM-first dependency consumption.",
+    tags: ["arya-banking", "docs", "readme"],
+  },
   {
     date: "2026-08-30",
     time: "14:00",
