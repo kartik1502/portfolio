@@ -22,31 +22,104 @@ const inter = Inter({
 
 const siteUrl = "https://kartik1502.github.io/portfolio";
 
-export const metadata: Metadata = {
-  title: "Karthik Kulkarni — Backend Engineer",
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Karthik Kulkarni",
+  url: siteUrl,
+  jobTitle: "Senior Software Engineer",
   description:
     "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
+  knowsAbout: [
+    "Java",
+    "Spring Boot",
+    "Apache Kafka",
+    "Microservices",
+    "Event-Driven Architecture",
+    "MongoDB",
+    "Docker",
+    "System Design",
+  ],
+  sameAs: [
+    "https://github.com/kartik1502",
+    "https://www.linkedin.com/in/kartik1502",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "HCLTech",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    addressCountry: "IN",
+  },
+};
+
+export const metadata: Metadata = {
+  title: {
+    default: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
+    template: "%s | Karthik Kulkarni",
+  },
+  description:
+    "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems at HCLTech[Citi].",
   metadataBase: new URL(siteUrl),
   alternates: { canonical: siteUrl },
-  authors: [{ name: "Karthik Kulkarni" }],
-  robots: { index: true, follow: true },
+  authors: [{ name: "Karthik Kulkarni", url: siteUrl }],
+  creator: "Karthik Kulkarni",
+  keywords: [
+    "Karthik Kulkarni",
+    "Backend Engineer",
+    "Java Developer",
+    "Spring Boot",
+    "Apache Kafka",
+    "Microservices",
+    "Event-Driven Architecture",
+    "Payment Systems",
+    "Bengaluru",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Karthik Kulkarni",
-    title: "Karthik Kulkarni — Backend Engineer",
-    description:
-      "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
     url: siteUrl,
-    images: [{ url: "/portfolio/og-image.png", width: 1200, height: 630, alt: "Karthik Kulkarni" }],
+    siteName: "Karthik Kulkarni — Portfolio",
+    title: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
+    description:
+      "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems.",
+    images: [
+      {
+        url: "/portfolio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Karthik Kulkarni — Backend Engineer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karthik Kulkarni — Backend Engineer",
+    title: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
     description:
       "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
     images: ["/portfolio/og-image.png"],
+    creator: "@kartik1502",
   },
+  verification: {},
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -56,6 +129,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <meta name="theme-color" content="#0a0f1e" />
+        <meta name="color-scheme" content="dark" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${jetbrainsMono.variable} ${inter.variable} font-body antialiased`}>
         <ScrollProgress />
         <ScrollToTop />

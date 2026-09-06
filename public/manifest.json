@@ -1,0 +1,16 @@
+{
+  "name": "Karthik Kulkarni — Portfolio",
+  "short_name": "Karthik Kulkarni",
+  "description": "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
+  "start_url": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#0a0f1e",
+  "theme_color": "#0a0f1e",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
