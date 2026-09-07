@@ -131,7 +131,7 @@ export const CREDENTIALS = [
 export const CONTACT = {
   email: "kartikkulkarni1411@gmail.com",
   github: "https://github.com/kartik1502",
-  linkedin: "https://www.linkedin.com/in/kartik1502",
+  linkedin: "https://www.linkedin.com/in/karthikulkarni/",
 };
 
 export const STACK = [
