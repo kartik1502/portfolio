@@ -1,49 +1,49 @@
 {
-  "total_seconds": 23289.449,
-  "human_readable_total": "6 hrs 28 mins",
-  "daily_average": 7763,
-  "human_readable_daily_average": "2 hrs 9 mins",
+  "total_seconds": 27886.602,
+  "human_readable_total": "7 hrs 44 mins",
+  "daily_average": 6972,
+  "human_readable_daily_average": "1 hr 56 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
-      "name": "Java",
-      "percent": 64,
-      "total_seconds": 15586.34
-    },
-    {
-      "name": "TypeScript",
-      "percent": 7,
-      "total_seconds": 1783.34
+      "name": "XML",
+      "percent": 21,
+      "total_seconds": 6056.709
     },
     {
       "name": "JSON",
-      "percent": 7,
-      "total_seconds": 1590.055
+      "percent": 16,
+      "total_seconds": 4526.88
     },
     {
-      "name": "Markdown",
+      "name": "YAML",
+      "percent": 16,
+      "total_seconds": 4452.797
+    },
+    {
+      "name": "Java",
+      "percent": 13,
+      "total_seconds": 3777.362
+    },
+    {
+      "name": "Terraform",
+      "percent": 13,
+      "total_seconds": 3675.884
+    },
+    {
+      "name": "TypeScript",
       "percent": 6,
-      "total_seconds": 1461.044
-    },
-    {
-      "name": "XML",
-      "percent": 6,
-      "total_seconds": 1457.867
-    },
-    {
-      "name": "Other",
-      "percent": 4,
-      "total_seconds": 883.933
+      "total_seconds": 1834.889
     }
   ],
   "editors": [
     {
       "name": "IntelliJ IDEA",
-      "percent": 93
+      "percent": 100
     },
     {
-      "name": "Opencode Cli",
-      "percent": 7
+      "name": "Unknown Editor",
+      "percent": 0
     }
   ],
   "range": "last_7_days"
