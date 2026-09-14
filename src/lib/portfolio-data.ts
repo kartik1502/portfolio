@@ -217,6 +217,27 @@ export type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    date: "2026-09-14",
+    time: "18:00",
+    title: "Admin Kafka Admin API complete + common/BOM 2.0.2",
+    description: "Finished KafkaAdminController in admin-service: POST /api/admin/topics (create) and GET /api/admin/topics/describe alongside listing, backed by lazy AdminClientManager, TopicListing/TopicDescription mappers, 5s timeouts, and ResponseDto success envelope with TopicCreationException (TOPIC_CREATION_FAILED_400) on failure. Shipped arya-banking-common 2.0.2 (ResponseDto, TopicCreationException) and arya-banking-bom 2.0.2; admin-service now on BOM 2.0.2 with kafka, mongo, kafka-clients and vault-config deps. Added kafka-ops → ROLE_ADMIN and migrated Vault update to @AllowedRoles.",
+    tags: ["arya-banking", "admin-service", "kafka", "common", "bom"],
+  },
+  {
+    date: "2026-09-13",
+    time: "23:30",
+    title: "Common 2.0.1 Confluent SASL support + service Vault onboarding",
+    description: "Released arya-banking-common 2.0.1: KafkaConfiguration now forwards security.protocol (SASL_SSL), sasl.mechanism/jaas.config, and Schema Registry basic.auth USER_INFO only when set — local PLAINTEXT keeps working. Removed local docker-compose files; Confluent Cloud is canonical. Bumped arya-banking-bom 2.0.0 → 2.0.1. Onboarded auth-service, user-service and admin-service to spring-cloud-starter-vault-config with Vault confluent.kafka.api/schema placeholders; auth dropped local spring.kafka block in favor of Config Server defaults. Admin added topic-listing endpoint and batch VaultSecretDto (service + List<VaultSecret>).",
+    tags: ["arya-banking", "common", "bom", "kafka", "vault", "confluent"],
+  },
+  {
+    date: "2026-09-12",
+    time: "21:30",
+    title: "Central config migrated to Confluent Cloud + secret hygiene",
+    description: "Migrated arya-banking-configs application.yml from localhost:9092 / :8081 to Confluent Cloud broker (pkc-41p56) + Schema Registry (psrc-81q7m7) with SASL PLAIN / SASL_SSL, session timeout, client.id and USER_INFO Schema Registry auth. Replaced hard-coded SASL password with Vault placeholders, fixed schema auth to use schema.key (was api.key). Gateway routes already on lb:// discovery. Services inherit broker wiring from Config Server and supply only Vault confluent.* keys.",
+    tags: ["arya-banking", "config-server", "kafka", "confluent", "vault"],
+  },
+  {
     date: "2026-09-06",
     time: "02:00",
     title: "Common library modularized into 5 independent modules",
