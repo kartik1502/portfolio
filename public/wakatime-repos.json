@@ -1,49 +1,55 @@
 {
-  "updatedAt": "2026-09-14T11:52:17.970Z",
+  "updatedAt": "2026-09-14T13:12:09.398Z",
   "start": "2026-09-11",
   "end": "2026-09-13",
   "range": "last_7_days",
   "repos": [
     {
       "name": "arya-banking-admin-service",
-      "seconds": 14571,
-      "percent": 48.8,
+      "seconds": 16944,
+      "percent": 50.4,
       "color": ""
     },
     {
       "name": "arya-banking-user-service",
       "seconds": 5096,
-      "percent": 17.1,
+      "percent": 15.1,
       "color": ""
     },
     {
       "name": "arya-banking-common",
-      "seconds": 3874,
-      "percent": 13,
+      "seconds": 4006,
+      "percent": 11.9,
       "color": ""
     },
     {
       "name": "arya-banking-configs",
-      "seconds": 2600,
-      "percent": 8.7,
+      "seconds": 2602,
+      "percent": 7.7,
       "color": ""
     },
     {
       "name": "arya-banking-auth-service",
-      "seconds": 2039,
-      "percent": 6.8,
+      "seconds": 2056,
+      "percent": 6.1,
       "color": ""
     },
     {
       "name": "arya-banking-infra",
       "seconds": 1113,
-      "percent": 3.7,
+      "percent": 3.3,
+      "color": ""
+    },
+    {
+      "name": "arya-banking",
+      "seconds": 1079,
+      "percent": 3.2,
       "color": ""
     },
     {
       "name": "arya-banking-bom",
-      "seconds": 559,
-      "percent": 1.9,
+      "seconds": 755,
+      "percent": 2.2,
       "color": ""
     }
   ],
@@ -85,7 +91,7 @@
       "projects": [
         {
           "name": "arya-banking-admin-service",
-          "seconds": 11615,
+          "seconds": 11608,
           "color": ""
         },
         {
@@ -117,31 +123,41 @@
           "name": "arya-banking-bom",
           "seconds": 85,
           "color": ""
+        },
+        {
+          "name": "arya-banking",
+          "seconds": 7,
+          "color": ""
         }
       ]
     },
     {
       "date": "2026-09-13",
-      "total": 4320,
+      "total": 8119,
       "projects": [
         {
           "name": "arya-banking-admin-service",
-          "seconds": 2956,
+          "seconds": 5336,
           "color": ""
         },
         {
-          "name": "arya-banking-configs",
-          "seconds": 539,
+          "name": "arya-banking",
+          "seconds": 1072,
           "color": ""
         },
         {
           "name": "arya-banking-common",
-          "seconds": 436,
+          "seconds": 568,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-configs",
+          "seconds": 541,
           "color": ""
         },
         {
           "name": "arya-banking-bom",
-          "seconds": 223,
+          "seconds": 419,
           "color": ""
         },
         {
@@ -151,7 +167,7 @@
         },
         {
           "name": "arya-banking-auth-service",
-          "seconds": 42,
+          "seconds": 59,
           "color": ""
         },
         {
