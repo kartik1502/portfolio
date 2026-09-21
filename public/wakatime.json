@@ -1,39 +1,39 @@
 {
-  "total_seconds": 26278.377,
-  "human_readable_total": "7 hrs 17 mins",
-  "daily_average": 13139,
-  "human_readable_daily_average": "3 hrs 38 mins",
+  "total_seconds": 24326.373,
+  "human_readable_total": "6 hrs 45 mins",
+  "daily_average": 8109,
+  "human_readable_daily_average": "2 hrs 15 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 50,
-      "total_seconds": 14006.371
-    },
-    {
-      "name": "YAML",
-      "percent": 21,
-      "total_seconds": 5965.46
+      "percent": 53,
+      "total_seconds": 12990.609
     },
     {
       "name": "XML",
-      "percent": 19,
-      "total_seconds": 5281.538
+      "percent": 18,
+      "total_seconds": 4382.558
     },
     {
-      "name": "Other",
-      "percent": 7,
-      "total_seconds": 2004.333
+      "name": "Markdown",
+      "percent": 9,
+      "total_seconds": 2096.877
     },
     {
-      "name": "Text",
-      "percent": 1,
-      "total_seconds": 321.053
+      "name": "YAML",
+      "percent": 6,
+      "total_seconds": 1443.269
     },
     {
       "name": "TypeScript",
-      "percent": 1,
-      "total_seconds": 313.062
+      "percent": 5,
+      "total_seconds": 1203.784
+    },
+    {
+      "name": "AvroIDL",
+      "percent": 4,
+      "total_seconds": 1089.748
     }
   ],
   "editors": [
