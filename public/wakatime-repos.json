@@ -1,8 +1,65 @@
 {
-  "updatedAt": "2026-09-28T12:58:28.635Z",
-  "start": "",
-  "end": "",
+  "updatedAt": "2026-10-05T13:40:21.148Z",
+  "start": "2026-10-02",
+  "end": "2026-10-03",
   "range": "last_7_days",
-  "repos": [],
-  "daily": []
+  "repos": [
+    {
+      "name": "arya-banking-audit-service",
+      "seconds": 4403,
+      "percent": 82.6,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-common",
+      "seconds": 761,
+      "percent": 14.3,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-admin-service",
+      "seconds": 165,
+      "percent": 3.1,
+      "color": ""
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-10-02",
+      "total": 3838,
+      "projects": [
+        {
+          "name": "arya-banking-audit-service",
+          "seconds": 3127,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-common",
+          "seconds": 711,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "total": 1491,
+      "projects": [
+        {
+          "name": "arya-banking-audit-service",
+          "seconds": 1276,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-admin-service",
+          "seconds": 165,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-common",
+          "seconds": 50,
+          "color": ""
+        }
+      ]
+    }
+  ]
 }
