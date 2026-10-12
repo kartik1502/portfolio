@@ -1,34 +1,29 @@
 {
-  "total_seconds": 5328.801,
-  "human_readable_total": "1 hr 28 mins",
-  "daily_average": 2664,
+  "total_seconds": 5386.956,
+  "human_readable_total": "1 hr 29 mins",
+  "daily_average": 2693,
   "human_readable_daily_average": "44 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 83,
-      "total_seconds": 4422.683
+      "percent": 64,
+      "total_seconds": 3433.864
     },
     {
       "name": "YAML",
-      "percent": 13,
-      "total_seconds": 715.517
-    },
-    {
-      "name": "Terraform",
-      "percent": 3,
-      "total_seconds": 164.545
+      "percent": 27,
+      "total_seconds": 1445.807
     },
     {
       "name": "XML",
-      "percent": 0,
-      "total_seconds": 24.521
+      "percent": 9,
+      "total_seconds": 507.116
     },
     {
       "name": "AvroIDL",
       "percent": 0,
-      "total_seconds": 1.535
+      "total_seconds": 0.169
     }
   ],
   "editors": [
