@@ -26,6 +26,9 @@ jobs:
       - name: Fetch WakaTime stats
         run: node scripts/fetch-wakatime.mjs
         env:
+          # OAuth 2.0 access token from https://wakatime.com/oauth
+          WAKATIME_ACCESS_TOKEN: ${{ secrets.WAKATIME_ACCESS_TOKEN }}
+          # Migration fallback — remove once WAKATIME_ACCESS_TOKEN is set
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       - name: Commit and push if changed
         id: commit

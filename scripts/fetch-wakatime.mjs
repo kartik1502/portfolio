@@ -3,7 +3,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const API_KEY = process.env.WAKATIME_API_KEY;
+
+// WakaTime API keys are write-only (plugins sending activity). Reading stats
+// requires an OAuth 2.0 access token sent as `Authorization: Bearer`.
+// Create a personal token at https://wakatime.com/oauth with the
+// read_stats + read_summaries scopes. WAKATIME_API_KEY is kept as a
+// fallback so existing deployments keep working during migration.
+const ACCESS_TOKEN =
+  process.env.WAKATIME_ACCESS_TOKEN || process.env.WAKATIME_API_KEY;
 
 const STATS_OUT = path.resolve(__dirname, "../public/wakatime.json");
 const REPOS_OUT = path.resolve(__dirname, "../public/wakatime-repos.json");
@@ -45,17 +52,22 @@ const FALLBACK_REPOS = {
   daily: [],
 };
 
-const headers = API_KEY
-  ? { Authorization: `Basic ${Buffer.from(API_KEY).toString("base64")}` }
+const headers = ACCESS_TOKEN
+  ? { Authorization: `Bearer ${ACCESS_TOKEN}` }
   : {};
 
 async function fetchJSON(url) {
   const res = await fetch(url, { headers });
+  if (res.status === 401) {
+    throw new Error(
+      "WakaTime 401 Unauthorized — WAKATIME_ACCESS_TOKEN must be an OAuth token from https://wakatime.com/oauth",
+    );
+  }
   if (!res.ok) throw new Error(`WakaTime API error: ${res.status} ${res.statusText}`);
   return res.json();
 }
 
-function writeIfMissing(outPath, fallback, reason = "WAKATIME_API_KEY not set") {
+function writeIfMissing(outPath, fallback, reason = "WAKATIME_ACCESS_TOKEN not set") {
   if (fs.existsSync(outPath)) {
     console.warn(`⚠ ${reason} — keeping existing ${path.basename(outPath)}`);
     return;
@@ -70,7 +82,7 @@ async function fetchRepoSummaries() {
   const fmt = (d) => d.toISOString().slice(0, 10);
   const params = new URLSearchParams({ start: fmt(start), end: fmt(end) });
   return fetchJSON(
-    `https://wakatime.com/api/v1/users/current/summaries?${params.toString()}`,
+    `https://api.wakatime.com/api/v1/users/current/summaries?${params.toString()}`,
   );
 }
 
@@ -121,7 +133,7 @@ function buildRepoAnalytics(json) {
   };
 }
 
-if (!API_KEY) {
+if (!ACCESS_TOKEN) {
   writeIfMissing(STATS_OUT, FALLBACK_STATS);
   writeIfMissing(REPOS_OUT, FALLBACK_REPOS);
   process.exit(0);
@@ -129,8 +141,8 @@ if (!API_KEY) {
 
 async function main() {
   const [stats, allTime, summaries] = await Promise.all([
-    fetchJSON("https://wakatime.com/api/v1/users/current/stats/last_7_days"),
-    fetchJSON("https://wakatime.com/api/v1/users/current/all_time_since_today"),
+    fetchJSON("https://api.wakatime.com/api/v1/users/current/stats/last_7_days"),
+    fetchJSON("https://api.wakatime.com/api/v1/users/current/all_time_since_today"),
     fetchRepoSummaries(),
   ]);
 
