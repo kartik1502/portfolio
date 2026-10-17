@@ -1,0 +1,25 @@
+{
+  "intents": {
+    "inline:the-portfolio-homepage-renders-its-wakatime-codi-1126fa71": {
+      "binding": {
+        "contains": "1 hr 29 mins",
+        "kind": "text"
+      },
+      "declaredAt": 1792244154945,
+      "id": "inline:the-portfolio-homepage-renders-its-wakatime-codi-1126fa71",
+      "provenBy": {
+        "at": 1792244155023,
+        "grade": "presence",
+        "runId": "drive-s0d0644cc-256f-4e11-b242-fc6bdfda838d",
+        "verdictId": "reticle_assert:1792244155023"
+      },
+      "state": "proved",
+      "statement": "the portfolio homepage renders its WakaTime coding-hours badge from wakatime.json instead of the placeholder dash",
+      "status": "proved",
+      "subject": "unsorted",
+      "updatedAt": 1792244155024
+    }
+  },
+  "subject": "unsorted",
+  "version": 1
+}
