@@ -1,3 +1,4 @@
+import { ReticleDev } from './reticle-dev';
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
@@ -137,7 +138,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${jetbrainsMono.variable} ${inter.variable} font-body antialiased`}>
+      <body className={`${jetbrainsMono.variable} ${inter.variable} font-body antialiased`}>{process.env.NODE_ENV === 'development' ? <ReticleDev /> : null}
         <ScrollProgress />
         <ScrollToTop />
         <GridOverlay />
