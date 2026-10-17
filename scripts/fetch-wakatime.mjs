@@ -7,10 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // WakaTime API keys are write-only (plugins sending activity). Reading stats
 // requires an OAuth 2.0 access token sent as `Authorization: Bearer`.
 // Create a personal token at https://wakatime.com/oauth with the
-// read_stats + read_summaries scopes. WAKATIME_API_KEY is kept as a
-// fallback so existing deployments keep working during migration.
-const ACCESS_TOKEN =
-  process.env.WAKATIME_ACCESS_TOKEN || process.env.WAKATIME_API_KEY;
+// read_stats + read_summaries scopes.
+const ACCESS_TOKEN = process.env.WAKATIME_ACCESS_TOKEN;
 
 const STATS_OUT = path.resolve(__dirname, "../public/wakatime.json");
 const REPOS_OUT = path.resolve(__dirname, "../public/wakatime-repos.json");
