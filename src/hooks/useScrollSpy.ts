@@ -35,7 +35,7 @@ export function useScrollSpy(ids: string[], offset = 140): string | null {
             }
           }
           if (!best) {
-            for (const id of ids) if (visible.has(id)) { best = id; break; }
+            for (const id of ids) if (visible.has(id)) best = id;
           }
           if (best) setActive(best);
         } else {
