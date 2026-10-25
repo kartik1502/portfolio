@@ -260,7 +260,7 @@ function CodingActivitySection() {
             Coding_Activity
           </h2>
           <p className="mt-2 text-[10px] font-display text-muted-foreground/70 uppercase tracking-widest">
-            via WakaTime · last 7 days
+            via WakaTime · personal and open-source work · last 7 days
           </p>
         </div>
         <div className="col-span-4 md:col-span-9">
