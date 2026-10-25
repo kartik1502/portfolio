@@ -31,7 +31,7 @@ const jsonLd = {
   url: siteUrl,
   jobTitle: "Senior Software Engineer",
   description:
-    "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
+    "Backend engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
   knowsAbout: [
     "Java",
     "Spring Boot",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     template: "%s | Karthik Kulkarni",
   },
   description:
-    "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems at HCLTech[Citi].",
+    "Backend engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems at Citi via HCLTech.",
   metadataBase: new URL(siteUrl),
   alternates: { canonical: siteUrl },
   authors: [{ name: "Karthik Kulkarni", url: siteUrl }],
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     siteName: "Karthik Kulkarni — Portfolio",
     title: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
     description:
-      "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems.",
+      "Backend engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems.",
     images: [
       {
         url: "/og-image.png",
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
     description:
-      "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
+      "Backend engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
     images: ["/og-image.png"],
     creator: "@kartik1502",
   },
