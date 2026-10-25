@@ -101,7 +101,7 @@ export const metadata: Metadata = {
       "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems.",
     images: [
       {
-        url: `${basePath}/og-image.png`,
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Karthik Kulkarni — Backend Engineer Portfolio",
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     title: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
     description:
       "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
-    images: [`${basePath}/og-image.png`],
+    images: ["/og-image.png"],
     creator: "@kartik1502",
   },
   verification: {},
