@@ -1,8 +1,32 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { CHANGELOG } from "@/lib/portfolio-data";
+import { CHANGELOG, type ChangelogEntry } from "@/lib/portfolio-data";
 import { Reveal } from "@/components/Reveal";
+import generatedAryaEntries from "../../public/changelog-arya.json";
+import generatedExternalEntries from "../../public/changelog-contributions.json";
+import overrideData from "../../data/changelog-overrides.json";
+
+type Overrides = {
+  include?: string[];
+  exclude?: string[];
+  replace?: Record<string, Partial<ChangelogEntry>>;
+};
+
+const OVERRIDES = overrideData as unknown as Overrides;
+
+function applyOverrides(entry: ChangelogEntry): ChangelogEntry | null {
+  if (entry.id && OVERRIDES.exclude?.includes(entry.id)) return null;
+  const replacement = entry.id ? OVERRIDES.replace?.[entry.id] : undefined;
+  return replacement ? { ...entry, ...replacement } : entry;
+}
+
+const GENERATED_ENTRIES = [
+  ...(generatedAryaEntries as unknown as ChangelogEntry[]),
+  ...(generatedExternalEntries as unknown as ChangelogEntry[]),
+]
+  .map(applyOverrides)
+  .filter((entry): entry is ChangelogEntry => entry !== null && !entry.skip);
 
 type View = "all" | "daily" | "weekly" | "monthly";
 
@@ -12,6 +36,10 @@ const VIEWS: { value: View; label: string }[] = [
   { value: "weekly", label: "Weekly" },
   { value: "monthly", label: "Monthly" },
 ];
+
+const ALL_ENTRIES: ChangelogEntry[] = [...CHANGELOG, ...GENERATED_ENTRIES].sort((a, b) =>
+  `${b.date}T${b.time ?? "00:00"}`.localeCompare(`${a.date}T${a.time ?? "00:00"}`),
+);
 
 function getPeriod(dateStr: string, view: View): string {
   const d = new Date(dateStr + "T00:00:00");
@@ -65,8 +93,8 @@ export function ChangelogContent() {
   const [open, setOpen] = useState(true);
 
   const groups = useMemo(() => {
-    const map = new Map<string, typeof CHANGELOG>();
-    for (const entry of CHANGELOG) {
+    const map = new Map<string, ChangelogEntry[]>();
+    for (const entry of ALL_ENTRIES) {
       if (!isInPeriod(entry.date, view)) continue;
       const key = getPeriod(entry.date, view);
       if (!map.has(key)) map.set(key, []);
@@ -87,8 +115,8 @@ export function ChangelogContent() {
             <span className="text-primary">LOG.</span>
           </h1>
           <p className="max-w-[52ch] text-lg text-muted-foreground">
-            A running record of work done — feature additions, fixes, refactors, and infrastructure
-            changes tracked daily or weekly.
+            A running record of work done — projects, open-source contributions, feature additions,
+            fixes, and infrastructure changes.
           </p>
         </div>
       </section>
@@ -135,7 +163,12 @@ export function ChangelogContent() {
                 </h3>
                 <div className="space-y-6">
                   {entries.map((entry, i) => (
-                    <Reveal key={i} from="right" delay={i * 80} as="article">
+                    <Reveal
+                      key={entry.id ?? `${entry.date}-${i}`}
+                      from="right"
+                      delay={i * 80}
+                      as="article"
+                    >
                       <div className="border-l-2 border-primary/40 pl-6 py-2">
                         <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
                           <h4 className="font-display text-base font-bold tracking-tight">
@@ -148,9 +181,9 @@ export function ChangelogContent() {
                         <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           {entry.description}
                         </p>
-                        {entry.tags && (
-                          <div className="flex flex-wrap gap-2">
-                            {entry.tags.map((t) => (
+                        {(entry.tags?.length || entry.href) && (
+                          <div className="flex flex-wrap items-center gap-2">
+                            {entry.tags?.map((t) => (
                               <span
                                 key={t}
                                 className="px-2 py-0.5 border border-border text-[10px] font-display uppercase tracking-widest text-muted-foreground"
@@ -158,6 +191,16 @@ export function ChangelogContent() {
                                 {t}
                               </span>
                             ))}
+                            {entry.href && (
+                              <a
+                                href={entry.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="font-display text-[10px] uppercase tracking-widest text-primary hover:underline"
+                              >
+                                Pull request ↗
+                              </a>
+                            )}
                           </div>
                         )}
                       </div>

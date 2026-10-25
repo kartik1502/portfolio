@@ -32,12 +32,17 @@ jobs:
         run: node scripts/fetch-contributions.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Fetch Arya Banking changelog
+        run: node scripts/fetch-arya-changelog.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       - name: Commit and push if changed
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/wakatime.json public/wakatime-repos.json public/contributions.json
+          git add public/wakatime.json public/wakatime-repos.json public/contributions.json public/changelog-contributions.json public/changelog-arya.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             echo "changed=false" >> "$GITHUB_OUTPUT"

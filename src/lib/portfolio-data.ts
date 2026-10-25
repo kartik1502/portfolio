@@ -214,11 +214,15 @@ export const BEYOND = [
 ];
 
 export type ChangelogEntry = {
+  id?: string;
   date: string;
   time?: string;
   title: string;
   description: string;
   tags?: string[];
+  href?: string;
+  source?: "manual" | "ai" | "fallback" | "external";
+  skip?: boolean;
 };
 
 export const CHANGELOG: ChangelogEntry[] = [

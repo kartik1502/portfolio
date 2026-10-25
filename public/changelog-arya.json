@@ -1,0 +1,54 @@
+[
+  {
+    "id": "arya:2026-10-20",
+    "date": "2026-10-20",
+    "time": "23:12",
+    "title": "Reverted to Pre-Confluent Kafka",
+    "description": "The platform reverted to the original local Kafka and schema registry settings, removing the Confluent-specific configuration from several services. Unused Kafka entries were cleaned from application files and an audit service policy was added, while the infrastructure repository updated Kafka settings and ignored GCP data files. These changes simplify local development and ensure the services run with the intended Kafka setup.",
+    "tags": [
+      "arya-banking",
+      "configs",
+      "admin-service",
+      "auth-service",
+      "infra",
+      "user-service"
+    ],
+    "source": "ai"
+  },
+  {
+    "id": "arya:2026-10-16",
+    "date": "2026-10-16",
+    "time": "14:09",
+    "title": "Added global routing and rebranded portal",
+    "description": "The portal introduced a global router with pending and error components, unified error mapping to toast notifications, and an EmptyState component for tables and lists, improving error visibility and handling across all views. The UI was rebranded from Vantage to Arya Banking, updating brand assets, meta tags, mock user domains, and disabling search indexing, which aligned the portal's appearance with the product name and removed demo references.",
+    "tags": [
+      "arya-banking",
+      "unified-banking-portal"
+    ],
+    "source": "ai"
+  },
+  {
+    "id": "arya:2026-10-15",
+    "date": "2026-10-15",
+    "time": "23:29",
+    "title": "Removed Lovable AI Features",
+    "description": "The portal removed the Lovable AI error reporting, CLI assist, and AI review panel components. This eliminated unused AI functionality and simplified the codebase, reducing maintenance overhead. Users no longer see AI-related UI elements or error reports.",
+    "tags": [
+      "arya-banking",
+      "unified-banking-portal"
+    ],
+    "source": "ai"
+  },
+  {
+    "id": "arya:2026-10-14",
+    "date": "2026-10-14",
+    "time": "23:22",
+    "title": "Added CLI and AI Enhancements",
+    "description": "A command line shell with login support was added to the portal, allowing terminal-based interaction. AI-powered CLI suggestions and an AI review panel for approvals were integrated, improving productivity and decision support. Multi-factor authentication was added to the sign-in flow, strengthening security.",
+    "tags": [
+      "arya-banking",
+      "unified-banking-portal"
+    ],
+    "source": "ai"
+  }
+]

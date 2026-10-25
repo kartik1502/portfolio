@@ -1,0 +1,16 @@
+{
+  "include": [],
+  "exclude": [],
+  "replace": {
+    "arya:2026-10-14": {
+      "title": "Added CLI and AI enhancements"
+    },
+    "arya:2026-10-15": {
+      "title": "Removed Lovable AI features"
+    },
+    "arya:2026-10-20": {
+      "title": "Restored pre-Confluent Kafka configuration",
+      "description": "The platform reverted to the original local Kafka and schema registry settings, removing the Confluent-specific configuration from several services. Unused Kafka entries were cleaned from application files and an audit service policy was added, while the infrastructure repository updated Kafka settings. These changes simplify local development and ensure the services run with the intended Kafka setup."
+    }
+  }
+}
