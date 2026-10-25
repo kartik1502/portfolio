@@ -1,0 +1,35 @@
+{
+  "updatedAt": "2026-10-25T09:34:17.015Z",
+  "totalMerged": 4,
+  "projects": 2,
+  "latest": [
+    {
+      "repo": "reticlehq/reticle",
+      "number": 1824,
+      "title": "fix(server): name an enum parameter's values in reticle_tools",
+      "url": "https://github.com/reticlehq/reticle/pull/1824",
+      "mergedAt": "2026-10-25T02:02:03Z"
+    },
+    {
+      "repo": "croffasia/itsaplan",
+      "number": 660,
+      "title": "fix: clear completed-issue inbox notifications including unread",
+      "url": "https://github.com/croffasia/itsaplan/pull/660",
+      "mergedAt": "2026-10-21T20:17:17Z"
+    },
+    {
+      "repo": "croffasia/itsaplan",
+      "number": 656,
+      "title": "feat(web): add inline checkboxes to issue descriptions",
+      "url": "https://github.com/croffasia/itsaplan/pull/656",
+      "mergedAt": "2026-10-21T14:55:33Z"
+    },
+    {
+      "repo": "croffasia/itsaplan",
+      "number": 613,
+      "title": "feat(web): create a page from an uploaded Markdown file",
+      "url": "https://github.com/croffasia/itsaplan/pull/613",
+      "mergedAt": "2026-10-19T20:07:09Z"
+    }
+  ]
+}

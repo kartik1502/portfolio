@@ -5,6 +5,7 @@ import { PROJECTS } from "@/lib/portfolio-data";
 import { Reveal } from "@/components/Reveal";
 import { SectionSubnav } from "@/components/SectionSubnav";
 import { CodingActivity } from "@/components/CodingActivity";
+import { OpenSourceSection } from "@/components/OpenSourceSection";
 
 export function ProjectsContent() {
   return (
@@ -37,11 +38,13 @@ export function ProjectsContent() {
           { id: "overview", label: "01 · Overview" },
           { id: "modules", label: "02 · Modules" },
           { id: "case-studies", label: "03 · Case studies" },
+          { id: "open-source", label: "04 · Open source" },
         ]}
       />
 
       <ModulesSection />
       <CaseStudiesSection />
+      <OpenSourceSection />
       <CodingActivitySection />
     </>
   );

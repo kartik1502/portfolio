@@ -29,4 +29,6 @@ The static export is written to `out/`.
 
 - `src/lib/portfolio-data.ts` — profile, projects, experience, writing
 - `src/components/` — page sections
-- `public/` — images, resume, and the weekly WakaTime snapshot
+- `public/` — images, the weekly WakaTime snapshot, and the weekly GitHub contribution snapshot
+
+The weekly stats workflow refreshes WakaTime and GitHub contribution data, then triggers a deploy.

@@ -1,4 +1,4 @@
-name: Update WakaTime Stats
+name: Update Weekly Stats
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: wakatime-stats
+  group: weekly-stats
   cancel-in-progress: false
 
 jobs:
@@ -28,18 +28,22 @@ jobs:
         env:
           # OAuth 2.0 access token from https://wakatime.com/oauth
           WAKATIME_ACCESS_TOKEN: ${{ secrets.WAKATIME_ACCESS_TOKEN }}
+      - name: Fetch GitHub contributions
+        run: node scripts/fetch-contributions.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Commit and push if changed
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/wakatime.json public/wakatime-repos.json
+          git add public/wakatime.json public/wakatime-repos.json public/contributions.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git commit -m "chore: update WakaTime stats [skip ci]"
+          git commit -m "chore: update weekly stats [skip ci]"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push origin main && break
             echo "Push rejected, retrying ($i)..."
