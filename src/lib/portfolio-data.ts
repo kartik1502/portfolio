@@ -47,8 +47,8 @@ export const PROJECTS = [
     tags: ["Spring Boot", "Microservices", "Eureka", "Keycloak", "MySQL"],
     href: "https://github.com/kartik1502/Spring-Boot-Microservices-Banking-Application",
     stats: [
-      { label: "Stars", value: "254" },
-      { label: "Forks", value: "190" },
+      { label: "Stars", value: "250+" },
+      { label: "Forks", value: "180+" },
     ],
     label: "MODULE_SB_MICROSERVICES",
     domain: "Fintech",
