@@ -7,10 +7,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // WakaTime API keys are write-only (plugins sending activity). Reading stats
 // requires an OAuth 2.0 access token sent as `Authorization: Bearer`.
 // Create a personal token at https://wakatime.com/oauth with the
-// read_stats + read_summaries scopes.
+// read_summaries scope.
 const ACCESS_TOKEN = process.env.WAKATIME_ACCESS_TOKEN;
 
-const STATS_OUT = path.resolve(__dirname, "../public/wakatime.json");
 const REPOS_OUT = path.resolve(__dirname, "../public/wakatime-repos.json");
 
 const REPOS = [
@@ -29,17 +28,6 @@ const REPOS = [
   "arya-banking-audit-service",
   "unified-banking-portal"
 ];
-
-const FALLBACK_STATS = {
-  total_seconds: 0,
-  human_readable_total: "—",
-  daily_average: 0,
-  human_readable_daily_average: "—",
-  all_time_total: "—",
-  languages: [],
-  editors: [],
-  range: "last_7_days",
-};
 
 const FALLBACK_REPOS = {
   updatedAt: new Date().toISOString(),
@@ -132,38 +120,12 @@ function buildRepoAnalytics(json) {
 }
 
 if (!ACCESS_TOKEN) {
-  writeIfMissing(STATS_OUT, FALLBACK_STATS);
   writeIfMissing(REPOS_OUT, FALLBACK_REPOS);
   process.exit(0);
 }
 
 async function main() {
-  const [stats, allTime, summaries] = await Promise.all([
-    fetchJSON("https://api.wakatime.com/api/v1/users/current/stats/last_7_days"),
-    fetchJSON("https://api.wakatime.com/api/v1/users/current/all_time_since_today"),
-    fetchRepoSummaries(),
-  ]);
-
-  const data = {
-    total_seconds: stats.data?.total_seconds ?? 0,
-    human_readable_total: stats.data?.human_readable_total ?? "0 hrs",
-    daily_average: stats.data?.daily_average ?? 0,
-    human_readable_daily_average: stats.data?.human_readable_daily_average ?? "0 hrs",
-    all_time_total: allTime.data?.human_readable_total ?? "0 hrs",
-    languages: (stats.data?.languages ?? []).slice(0, 6).map((l) => ({
-      name: l.name,
-      percent: Math.round(l.percent),
-      total_seconds: l.total_seconds,
-    })),
-    editors: (stats.data?.editors ?? []).slice(0, 3).map((e) => ({
-      name: e.name,
-      percent: Math.round(e.percent),
-    })),
-    range: stats.data?.range ?? "last_7_days",
-  };
-
-  fs.writeFileSync(STATS_OUT, JSON.stringify(data, null, 2));
-  console.log(`✓ WakaTime data written to ${STATS_OUT}`);
+  const summaries = await fetchRepoSummaries();
 
   fs.writeFileSync(REPOS_OUT, JSON.stringify(buildRepoAnalytics(summaries), null, 2));
   console.log(`✓ Repo analytics written to ${REPOS_OUT}`);
@@ -171,6 +133,5 @@ async function main() {
 
 main().catch((err) => {
   console.error("✗ WakaTime fetch failed:", err.message);
-  writeIfMissing(STATS_OUT, FALLBACK_STATS, "WakaTime fetch failed");
   writeIfMissing(REPOS_OUT, FALLBACK_REPOS, "WakaTime fetch failed");
 });
