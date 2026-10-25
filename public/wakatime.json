@@ -1,49 +1,49 @@
 {
-  "total_seconds": 27802.316,
-  "human_readable_total": "7 hrs 43 mins",
-  "daily_average": 13901,
-  "human_readable_daily_average": "3 hrs 51 mins",
+  "total_seconds": 50091.854,
+  "human_readable_total": "13 hrs 54 mins",
+  "daily_average": 12523,
+  "human_readable_daily_average": "3 hrs 28 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
-      "name": "Markdown",
-      "percent": 33,
-      "total_seconds": 9195.841
+      "name": "TypeScript",
+      "percent": 35,
+      "total_seconds": 17563.729
     },
     {
-      "name": "TypeScript",
+      "name": "Markdown",
       "percent": 29,
-      "total_seconds": 8152.83
+      "total_seconds": 14616.931
     },
     {
       "name": "Java",
-      "percent": 15,
-      "total_seconds": 4292.84
-    },
-    {
-      "name": "Bash",
-      "percent": 4,
-      "total_seconds": 1117.195
+      "percent": 17,
+      "total_seconds": 8689.599
     },
     {
       "name": "YAML",
-      "percent": 4,
-      "total_seconds": 1037.59
+      "percent": 5,
+      "total_seconds": 2420.366
     },
     {
-      "name": "JavaScript",
-      "percent": 4,
-      "total_seconds": 988.701
+      "name": "JSON",
+      "percent": 3,
+      "total_seconds": 1734.497
+    },
+    {
+      "name": "HTML",
+      "percent": 2,
+      "total_seconds": 1009.416
     }
   ],
   "editors": [
     {
-      "name": "Opencode Cli",
-      "percent": 68
+      "name": "IntelliJ IDEA",
+      "percent": 73
     },
     {
-      "name": "IntelliJ IDEA",
-      "percent": 32
+      "name": "Opencode Cli",
+      "percent": 27
     }
   ],
   "range": "last_7_days"

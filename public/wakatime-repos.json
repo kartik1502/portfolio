@@ -1,89 +1,101 @@
 {
-  "updatedAt": "2026-10-19T12:12:07.577Z",
-  "start": "2026-10-16",
-  "end": "2026-10-17",
+  "updatedAt": "2026-10-25T09:40:57.645Z",
+  "start": "2026-10-19",
+  "end": "2026-10-20",
   "range": "last_7_days",
   "repos": [
     {
       "name": "arya-banking-audit-service",
-      "seconds": 5611,
-      "percent": 62.5,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-common",
-      "seconds": 1423,
-      "percent": 15.9,
+      "seconds": 5225,
+      "percent": 44.7,
       "color": ""
     },
     {
       "name": "arya-banking-user-service",
-      "seconds": 1029,
-      "percent": 11.5,
+      "seconds": 3637,
+      "percent": 31.1,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-common",
+      "seconds": 1092,
+      "percent": 9.3,
       "color": ""
     },
     {
       "name": "arya-banking-admin-service",
-      "seconds": 520,
-      "percent": 5.8,
+      "seconds": 604,
+      "percent": 5.2,
       "color": ""
     },
     {
-      "name": "unified-banking-portal",
-      "seconds": 390,
-      "percent": 4.3,
+      "name": "arya-banking-infra",
+      "seconds": 554,
+      "percent": 4.7,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-configs",
+      "seconds": 358,
+      "percent": 3.1,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-auth-service",
+      "seconds": 216,
+      "percent": 1.8,
       "color": ""
     }
   ],
   "daily": [
     {
-      "date": "2026-10-16",
-      "total": 7561,
+      "date": "2026-10-19",
+      "total": 11679,
       "projects": [
         {
           "name": "arya-banking-audit-service",
-          "seconds": 5383,
+          "seconds": 5218,
           "color": ""
         },
         {
           "name": "arya-banking-user-service",
-          "seconds": 1029,
+          "seconds": 3637,
           "color": ""
         },
         {
           "name": "arya-banking-common",
-          "seconds": 746,
-          "color": ""
-        },
-        {
-          "name": "unified-banking-portal",
-          "seconds": 390,
+          "seconds": 1092,
           "color": ""
         },
         {
           "name": "arya-banking-admin-service",
-          "seconds": 13,
+          "seconds": 604,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-infra",
+          "seconds": 554,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-configs",
+          "seconds": 358,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-auth-service",
+          "seconds": 216,
           "color": ""
         }
       ]
     },
     {
-      "date": "2026-10-17",
-      "total": 1412,
+      "date": "2026-10-20",
+      "total": 7,
       "projects": [
         {
-          "name": "arya-banking-common",
-          "seconds": 677,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-admin-service",
-          "seconds": 507,
-          "color": ""
-        },
-        {
           "name": "arya-banking-audit-service",
-          "seconds": 228,
+          "seconds": 7,
           "color": ""
         }
       ]
