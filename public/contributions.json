@@ -1,8 +1,15 @@
 {
-  "updatedAt": "2026-10-25T11:51:58.660Z",
-  "totalMerged": 4,
+  "updatedAt": "2026-10-25T17:11:36.251Z",
+  "totalMerged": 5,
   "projects": 2,
   "latest": [
+    {
+      "repo": "croffasia/itsaplan",
+      "number": 706,
+      "title": "feat: add a calendar feed for shared saved views",
+      "url": "https://github.com/croffasia/itsaplan/pull/706",
+      "mergedAt": "2026-10-25T13:56:27Z"
+    },
     {
       "repo": "reticlehq/reticle",
       "number": 1824,

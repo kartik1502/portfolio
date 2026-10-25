@@ -1,49 +1,49 @@
 {
-  "updatedAt": "2026-10-25T09:40:57.645Z",
+  "updatedAt": "2026-10-25T17:11:35.692Z",
   "start": "2026-10-19",
-  "end": "2026-10-20",
+  "end": "2026-10-24",
   "range": "last_7_days",
   "repos": [
     {
       "name": "arya-banking-audit-service",
-      "seconds": 5225,
-      "percent": 44.7,
+      "seconds": 6032,
+      "percent": 45.7,
       "color": ""
     },
     {
       "name": "arya-banking-user-service",
-      "seconds": 3637,
-      "percent": 31.1,
+      "seconds": 3918,
+      "percent": 29.7,
       "color": ""
     },
     {
       "name": "arya-banking-common",
-      "seconds": 1092,
-      "percent": 9.3,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-admin-service",
-      "seconds": 604,
-      "percent": 5.2,
+      "seconds": 1382,
+      "percent": 10.5,
       "color": ""
     },
     {
       "name": "arya-banking-infra",
-      "seconds": 554,
-      "percent": 4.7,
+      "seconds": 648,
+      "percent": 4.9,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-admin-service",
+      "seconds": 634,
+      "percent": 4.8,
       "color": ""
     },
     {
       "name": "arya-banking-configs",
       "seconds": 358,
-      "percent": 3.1,
+      "percent": 2.7,
       "color": ""
     },
     {
       "name": "arya-banking-auth-service",
       "seconds": 216,
-      "percent": 1.8,
+      "percent": 1.6,
       "color": ""
     }
   ],
@@ -96,6 +96,37 @@
         {
           "name": "arya-banking-audit-service",
           "seconds": 7,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "total": 1502,
+      "projects": [
+        {
+          "name": "arya-banking-audit-service",
+          "seconds": 807,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-common",
+          "seconds": 290,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-user-service",
+          "seconds": 281,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-infra",
+          "seconds": 94,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-admin-service",
+          "seconds": 30,
           "color": ""
         }
       ]

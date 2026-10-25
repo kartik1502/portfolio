@@ -1,5 +1,20 @@
 [
   {
+    "id": "external:croffasia/itsaplan#706",
+    "date": "2026-10-25",
+    "time": "19:26",
+    "title": "Add a calendar feed for shared saved views",
+    "description": "Shared saved views expose a calendar feed.",
+    "tags": [
+      "open-source",
+      "croffasia/itsaplan",
+      "web",
+      "feature"
+    ],
+    "href": "https://github.com/croffasia/itsaplan/pull/706",
+    "source": "external"
+  },
+  {
     "id": "external:reticlehq/reticle#1824",
     "date": "2026-10-25",
     "time": "07:32",
