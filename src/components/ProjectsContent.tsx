@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { PROJECTS } from "@/lib/portfolio-data";
-import { RepoStat } from "@/components/RepoStat";
 import { Reveal } from "@/components/Reveal";
 import { SectionSubnav } from "@/components/SectionSubnav";
 import { CodingActivity } from "@/components/CodingActivity";
@@ -140,18 +139,14 @@ function ModulesSection() {
                     <span className="text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
                   </div>
                   <div className="grid grid-cols-2 gap-4 font-display">
-                    <div>
-                      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
-                        Stars
+                    {p.stats.map((s) => (
+                      <div key={s.label}>
+                        <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
+                          {s.label}
+                        </div>
+                        <div className="text-3xl font-bold">{s.value}</div>
                       </div>
-                      <div className="text-3xl font-bold"><RepoStat repo={p.repo} kind="stars" /></div>
-                    </div>
-                    <div>
-                      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
-                        Forks
-                      </div>
-                      <div className="text-3xl font-bold"><RepoStat repo={p.repo} kind="forks" /></div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

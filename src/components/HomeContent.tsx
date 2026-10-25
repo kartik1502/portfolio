@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { PROJECTS, STACK, METRICS, NOW, TESTIMONIALS } from "@/lib/portfolio-data";
-import { RepoStat } from "@/components/RepoStat";
 import { Reveal } from "@/components/Reveal";
 import { Spotlight } from "@/components/Spotlight";
 import { Typewriter } from "@/components/Typewriter";
-import { CodingHours } from "@/components/CodingHours";
 import { Tenure } from "@/components/Tenure";
 
 export function HomeContent() {
@@ -14,7 +12,6 @@ export function HomeContent() {
     <>
       <section id="top" className="px-4 md:px-8 py-24 md:py-40 grid grid-cols-4 md:grid-cols-12 gap-6">
         <div className="col-span-4 md:col-span-8 animate-reveal">
-          <CodingHours />
           <div className="flex items-center gap-3 mb-8 font-display text-[10px] uppercase tracking-[0.25em] text-primary">
             <span className="relative inline-flex size-1.5 rounded-full bg-primary text-primary shadow-[0_0_10px_currentColor] ping-dot" />
             Senior Software Engineer · Java Specialist
@@ -34,7 +31,7 @@ export function HomeContent() {
             HIGH DENSITY<span className="text-primary animate-caret ml-1">_</span>
           </h1>
           <p className="mt-12 max-w-[52ch] text-lg text-muted-foreground text-pretty">
-            <Tenure format="long" /> building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a 10-repository banking platform with a transactional outbox.
+            <Tenure format="long" /> building high-volume payment systems at HCLTech[Citi]. Spring Boot, Kafka, event-driven microservices. Currently architecting a multi-repo banking platform with a transactional outbox.
           </p>
           <div className="mt-12 flex items-center gap-4">
             <div className="h-px w-12 bg-primary" />
@@ -187,18 +184,14 @@ export function HomeContent() {
                     <span className="text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
                   </div>
                   <div className="grid grid-cols-2 gap-4 font-display">
-                    <div>
-                      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
-                        Stars
+                    {p.stats.map((s) => (
+                      <div key={s.label}>
+                        <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
+                          {s.label}
+                        </div>
+                        <div className="text-3xl font-bold">{s.value}</div>
                       </div>
-                      <div className="text-3xl font-bold"><RepoStat repo={p.repo} kind="stars" /></div>
-                    </div>
-                    <div>
-                      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">
-                        Forks
-                      </div>
-                      <div className="text-3xl font-bold"><RepoStat repo={p.repo} kind="forks" /></div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

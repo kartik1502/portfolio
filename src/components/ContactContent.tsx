@@ -39,7 +39,7 @@ export function ContactContent() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           { label: "GitHub", href: CONTACT.github, handle: "@kartik1502" },
-          { label: "LinkedIn", href: CONTACT.linkedin, handle: "/in/kartik1502" },
+          { label: "LinkedIn", href: CONTACT.linkedin, handle: "/in/karthikulkarni" },
           { label: "Email", href: `mailto:${CONTACT.email}`, handle: CONTACT.email },
         ].map((c) => (
           <a

@@ -3,10 +3,13 @@ export const PROJECTS = [
     n: "01",
     title: "Arya Banking",
     description:
-      "Event-driven banking platform — 14 repositories, 6 Spring Boot services with Kafka-based async communication, a multi-module shared library (core, mongo, kafka, feign, oauth2), a BOM for centralized dependency management, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, MongoDB persistence, and Spring AOP for cross-cutting concerns. Includes a 100+ page documentation site.",
+      "Event-driven banking platform — 19 repositories, 6 Spring Boot services with Kafka-based async communication, a multi-module shared library (core, mongo, kafka, feign, oauth2), a BOM for centralized dependency management, a transactional outbox starter library, Avro schemas on Confluent Schema Registry, Keycloak IAM, Vault secrets, MongoDB persistence, and Spring AOP for cross-cutting concerns. Includes a 100+ page documentation site.",
     tags: ["Spring Boot", "Kafka", "Outbox Pattern", "Avro", "Keycloak", "Vault", "MongoDB", "Docker", "Microservices", "Spring AOP"],
     href: "https://github.com/Event-Based-Banking-Application",
-    repo: "org:Event-Based-Banking-Application",
+    stats: [
+      { label: "Repositories", value: "19" },
+      { label: "Services", value: "6" },
+    ],
     label: "MODULE_ARYA_BANKING",
     domain: "Fintech",
     year: "2024",
@@ -18,7 +21,7 @@ export const PROJECTS = [
       "Transactional outbox guarantees at-least-once event delivery — no dual-write loss",
       "Avro contracts on Confluent Schema Registry make schema evolution safe",
       "Spring AOP for cross-cutting concerns (EventContext ThreadLocal cleanup across Kafka consumers)",
-      "14-repo org with modular shared library (5 modules) and BOM",
+      "19-repo org with modular shared library (5 modules) and BOM",
       "New service onboarding reduced to BOM import + module dependency declaration",
     ],
     architecture: [
@@ -43,7 +46,10 @@ export const PROJECTS = [
       "Microservices banking platform with Eureka service registry, Spring Cloud Gateway, Keycloak auth, and Feign Client communication. Database-per-service pattern with 5 dedicated MySQL instances.",
     tags: ["Spring Boot", "Microservices", "Eureka", "Keycloak", "MySQL"],
     href: "https://github.com/kartik1502/Spring-Boot-Microservices-Banking-Application",
-    repo: "kartik1502/Spring-Boot-Microservices-Banking-Application",
+    stats: [
+      { label: "Stars", value: "254" },
+      { label: "Forks", value: "190" },
+    ],
     label: "MODULE_SB_MICROSERVICES",
     domain: "Fintech",
     year: "2023",
@@ -156,7 +162,7 @@ export const METRICS: Metric[] = [
 ];
 
 export const NOW = [
-  "Architecting a 10-repository event-driven banking platform — Kafka, transactional outbox, Avro schemas, Spring AOP, and a live 100+ page docs site.",
+  "Architecting a multi-repo event-driven banking platform — Kafka, transactional outbox, Avro schemas, Spring AOP, and a live 100+ page docs site.",
   "Sharpening system design fundamentals — CAP, backpressure, idempotent consumers.",
   "Writing long-form on Kafka, Spring Batch, and microservice communication.",
   "Open to senior backend roles — remote or Bengaluru.",

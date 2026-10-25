@@ -22,6 +22,7 @@ const inter = Inter({
 });
 
 const siteUrl = "https://kartik1502.github.io/portfolio";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -43,7 +44,7 @@ const jsonLd = {
   ],
   sameAs: [
     "https://github.com/kartik1502",
-    "https://www.linkedin.com/in/kartik1502",
+    "https://www.linkedin.com/in/karthikulkarni/",
   ],
   worksFor: {
     "@type": "Organization",
@@ -100,7 +101,7 @@ export const metadata: Metadata = {
       "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices. Building high-volume payment systems.",
     images: [
       {
-        url: "/portfolio/og-image.png",
+        url: `${basePath}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Karthik Kulkarni — Backend Engineer Portfolio",
@@ -112,15 +113,15 @@ export const metadata: Metadata = {
     title: "Karthik Kulkarni — Backend Engineer | Java, Spring Boot, Kafka",
     description:
       "Senior software engineer specializing in Java, Spring Boot, Kafka, and event-driven microservices.",
-    images: ["/portfolio/og-image.png"],
+    images: [`${basePath}/og-image.png`],
     creator: "@kartik1502",
   },
   verification: {},
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: `${basePath}/favicon.ico`,
+    apple: `${basePath}/apple-touch-icon.png`,
   },
-  manifest: "/manifest.json",
+  manifest: `${basePath}/manifest.json`,
 };
 
 export default function RootLayout({

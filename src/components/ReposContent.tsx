@@ -22,7 +22,7 @@ export function ReposContent() {
           <div className="font-display text-[10px] uppercase tracking-widest text-muted-foreground md:text-right">
             Source: WakaTime<br />
             Range: Last 7 days<br />
-            Scope: 11 repos
+            Scope: arya-banking org
           </div>
         </div>
       </section>
