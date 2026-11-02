@@ -1,45 +1,44 @@
 {
-  "total_seconds": 60636,
-  "human_readable_total": "16 hrs 50 mins",
-  "daily_average": 10106,
-  "human_readable_daily_average": "2 hrs 48 mins",
+  "total_seconds": 7226.089,
+  "human_readable_total": "2 hrs",
+  "daily_average": 7226,
+  "human_readable_daily_average": "2 hrs",
   "all_time_total": "0 hrs",
   "languages": [
     {
+      "name": "Java",
+      "percent": 64,
+      "total_seconds": 4640.199
+    },
+    {
       "name": "TypeScript",
-      "percent": 33,
-      "total_seconds": 20087.149
+      "percent": 20,
+      "total_seconds": 1475.18
     },
     {
       "name": "Markdown",
-      "percent": 25,
-      "total_seconds": 15371.207
+      "percent": 11,
+      "total_seconds": 773
     },
     {
-      "name": "Java",
-      "percent": 16,
-      "total_seconds": 9494.701
-    },
-    {
-      "name": "Git",
-      "percent": 6,
-      "total_seconds": 3924.111
+      "name": "XML",
+      "percent": 4,
+      "total_seconds": 283.217
     },
     {
       "name": "YAML",
-      "percent": 5,
-      "total_seconds": 2903.939
-    },
-    {
-      "name": "JSON",
-      "percent": 4,
-      "total_seconds": 2590.768
+      "percent": 1,
+      "total_seconds": 54.493
     }
   ],
   "editors": [
     {
       "name": "IntelliJ IDEA",
-      "percent": 100
+      "percent": 90
+    },
+    {
+      "name": "Copilot CLI",
+      "percent": 10
     }
   ],
   "range": "last_7_days"
