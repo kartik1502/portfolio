@@ -1,31 +1,37 @@
 {
-  "updatedAt": "2026-11-09T15:28:33.461Z",
+  "updatedAt": "2026-11-09T18:00:25.171Z",
   "start": "2026-11-06",
-  "end": "2026-11-07",
+  "end": "2026-11-08",
   "range": "last_7_days",
   "repos": [
     {
+      "name": "fineract",
+      "seconds": 44373,
+      "percent": 83.4,
+      "color": ""
+    },
+    {
       "name": "arya-banking-audit-service",
       "seconds": 6666,
-      "percent": 75.4,
+      "percent": 12.5,
       "color": ""
     },
     {
       "name": "arya-banking-user-service",
       "seconds": 1354,
-      "percent": 15.3,
+      "percent": 2.5,
       "color": ""
     },
     {
       "name": "arya-banking-common",
       "seconds": 582,
-      "percent": 6.6,
+      "percent": 1.1,
       "color": ""
     },
     {
       "name": "arya-banking-auth-service",
       "seconds": 239,
-      "percent": 2.7,
+      "percent": 0.4,
       "color": ""
     }
   ],
@@ -58,8 +64,13 @@
     },
     {
       "date": "2026-11-07",
-      "total": 6318,
+      "total": 35024,
       "projects": [
+        {
+          "name": "fineract",
+          "seconds": 28706,
+          "color": ""
+        },
         {
           "name": "arya-banking-audit-service",
           "seconds": 5910,
@@ -68,6 +79,17 @@
         {
           "name": "arya-banking-user-service",
           "seconds": 408,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "total": 15667,
+      "projects": [
+        {
+          "name": "fineract",
+          "seconds": 15667,
           "color": ""
         }
       ]
