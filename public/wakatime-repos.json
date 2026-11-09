@@ -1,46 +1,73 @@
 {
-  "updatedAt": "2026-11-02T14:58:51.152Z",
-  "start": "2026-10-27",
-  "end": "2026-10-27",
+  "updatedAt": "2026-11-09T15:28:33.461Z",
+  "start": "2026-11-06",
+  "end": "2026-11-07",
   "range": "last_7_days",
   "repos": [
     {
       "name": "arya-banking-audit-service",
-      "seconds": 4623,
-      "percent": 92.9,
+      "seconds": 6666,
+      "percent": 75.4,
+      "color": ""
+    },
+    {
+      "name": "arya-banking-user-service",
+      "seconds": 1354,
+      "percent": 15.3,
       "color": ""
     },
     {
       "name": "arya-banking-common",
-      "seconds": 283,
-      "percent": 5.7,
+      "seconds": 582,
+      "percent": 6.6,
       "color": ""
     },
     {
-      "name": "arya-banking-bom",
-      "seconds": 72,
-      "percent": 1.4,
+      "name": "arya-banking-auth-service",
+      "seconds": 239,
+      "percent": 2.7,
       "color": ""
     }
   ],
   "daily": [
     {
-      "date": "2026-10-27",
-      "total": 4978,
+      "date": "2026-11-06",
+      "total": 2523,
       "projects": [
         {
+          "name": "arya-banking-user-service",
+          "seconds": 946,
+          "color": ""
+        },
+        {
           "name": "arya-banking-audit-service",
-          "seconds": 4623,
+          "seconds": 756,
           "color": ""
         },
         {
           "name": "arya-banking-common",
-          "seconds": 283,
+          "seconds": 582,
           "color": ""
         },
         {
-          "name": "arya-banking-bom",
-          "seconds": 72,
+          "name": "arya-banking-auth-service",
+          "seconds": 239,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "total": 6318,
+      "projects": [
+        {
+          "name": "arya-banking-audit-service",
+          "seconds": 5910,
+          "color": ""
+        },
+        {
+          "name": "arya-banking-user-service",
+          "seconds": 408,
           "color": ""
         }
       ]
