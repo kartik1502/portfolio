@@ -27,7 +27,8 @@ const REPOS = [
   "arya-banking-user-service",
   "arya-banking-outbox-service",
   "arya-banking-audit-service",
-  "unified-banking-portal"
+  "unified-banking-portal",
+  "fineract"
 ];
 
 const FALLBACK_STATS = {
