@@ -1,8 +1,15 @@
 {
-  "updatedAt": "2026-11-09T18:00:25.961Z",
-  "totalMerged": 5,
+  "updatedAt": "2026-11-10T22:58:58.611Z",
+  "totalMerged": 6,
   "projects": 2,
   "latest": [
+    {
+      "repo": "reticlehq/reticle",
+      "number": 2090,
+      "title": "fix(browser): insert text into rich-text editors with insertText",
+      "url": "https://github.com/reticlehq/reticle/pull/2090",
+      "mergedAt": "2026-11-10T20:45:58Z"
+    },
     {
       "repo": "croffasia/itsaplan",
       "number": 706,
@@ -30,13 +37,6 @@
       "title": "feat(web): add inline checkboxes to issue descriptions",
       "url": "https://github.com/croffasia/itsaplan/pull/656",
       "mergedAt": "2026-10-21T14:55:33Z"
-    },
-    {
-      "repo": "croffasia/itsaplan",
-      "number": 613,
-      "title": "feat(web): create a page from an uploaded Markdown file",
-      "url": "https://github.com/croffasia/itsaplan/pull/613",
-      "mergedAt": "2026-10-19T20:07:09Z"
     }
   ]
 }

@@ -1,39 +1,39 @@
 {
-  "total_seconds": 40833.097839,
-  "human_readable_total": "11 hrs 20 mins",
-  "daily_average": 13611,
-  "human_readable_daily_average": "3 hrs 46 mins",
+  "total_seconds": 71722.819601,
+  "human_readable_total": "19 hrs 55 mins",
+  "daily_average": 17931,
+  "human_readable_daily_average": "4 hrs 58 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 47,
-      "total_seconds": 25254.420441
+      "percent": 54,
+      "total_seconds": 50427.088065
     },
     {
       "name": "Other",
       "percent": 24,
-      "total_seconds": 12826.157439
+      "total_seconds": 22477.571616
     },
     {
       "name": "Markdown",
-      "percent": 12,
-      "total_seconds": 6337.602524
+      "percent": 7,
+      "total_seconds": 6771.513524
     },
     {
       "name": "Java Properties",
-      "percent": 8,
-      "total_seconds": 4462.895
+      "percent": 5,
+      "total_seconds": 4482.736
     },
     {
-      "name": "JavaScript",
-      "percent": 3,
-      "total_seconds": 1410.078017
+      "name": "TypeScript",
+      "percent": 4,
+      "total_seconds": 3430.001
     },
     {
-      "name": "Image (jpeg)",
+      "name": "JSON",
       "percent": 2,
-      "total_seconds": 1267.721177
+      "total_seconds": 1656.253644
     }
   ],
   "editors": [
