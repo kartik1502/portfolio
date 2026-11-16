@@ -1,39 +1,39 @@
 {
-  "total_seconds": 71722.819601,
-  "human_readable_total": "19 hrs 55 mins",
-  "daily_average": 17931,
-  "human_readable_daily_average": "4 hrs 58 mins",
+  "total_seconds": 45288.661624,
+  "human_readable_total": "12 hrs 34 mins",
+  "daily_average": 6470,
+  "human_readable_daily_average": "1 hr 47 mins",
   "all_time_total": "0 hrs",
   "languages": [
     {
       "name": "Java",
-      "percent": 54,
-      "total_seconds": 50427.088065
+      "percent": 59,
+      "total_seconds": 37731.802624
     },
     {
       "name": "Other",
-      "percent": 24,
-      "total_seconds": 22477.571616
-    },
-    {
-      "name": "Markdown",
-      "percent": 7,
-      "total_seconds": 6771.513524
-    },
-    {
-      "name": "Java Properties",
-      "percent": 5,
-      "total_seconds": 4482.736
+      "percent": 29,
+      "total_seconds": 18665.461848
     },
     {
       "name": "TypeScript",
       "percent": 4,
-      "total_seconds": 3430.001
+      "total_seconds": 2629.888
     },
     {
       "name": "JSON",
+      "percent": 3,
+      "total_seconds": 1641.168
+    },
+    {
+      "name": "Groovy",
       "percent": 2,
-      "total_seconds": 1656.253644
+      "total_seconds": 1478.035
+    },
+    {
+      "name": "AsciiDoc",
+      "percent": 1,
+      "total_seconds": 778.736
     }
   ],
   "editors": [

@@ -1,99 +1,17 @@
 {
-  "updatedAt": "2026-11-10T22:58:57.823Z",
-  "start": "2026-11-06",
-  "end": "2026-11-09",
+  "updatedAt": "2026-11-16T15:04:53.872Z",
+  "start": "2026-11-09",
+  "end": "2026-11-14",
   "range": "last_7_days",
   "repos": [
     {
       "name": "fineract",
-      "seconds": 56799,
-      "percent": 86.5,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-audit-service",
-      "seconds": 6666,
-      "percent": 10.2,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-user-service",
-      "seconds": 1354,
-      "percent": 2.1,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-common",
-      "seconds": 582,
-      "percent": 0.9,
-      "color": ""
-    },
-    {
-      "name": "arya-banking-auth-service",
-      "seconds": 239,
-      "percent": 0.4,
+      "seconds": 32803,
+      "percent": 100,
       "color": ""
     }
   ],
   "daily": [
-    {
-      "date": "2026-11-06",
-      "total": 2523,
-      "projects": [
-        {
-          "name": "arya-banking-user-service",
-          "seconds": 946,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-audit-service",
-          "seconds": 756,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-common",
-          "seconds": 582,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-auth-service",
-          "seconds": 239,
-          "color": ""
-        }
-      ]
-    },
-    {
-      "date": "2026-11-07",
-      "total": 35024,
-      "projects": [
-        {
-          "name": "fineract",
-          "seconds": 28706,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-audit-service",
-          "seconds": 5910,
-          "color": ""
-        },
-        {
-          "name": "arya-banking-user-service",
-          "seconds": 408,
-          "color": ""
-        }
-      ]
-    },
-    {
-      "date": "2026-11-08",
-      "total": 15995,
-      "projects": [
-        {
-          "name": "fineract",
-          "seconds": 15995,
-          "color": ""
-        }
-      ]
-    },
     {
       "date": "2026-11-09",
       "total": 12098,
@@ -101,6 +19,61 @@
         {
           "name": "fineract",
           "seconds": 12098,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "total": 5227,
+      "projects": [
+        {
+          "name": "fineract",
+          "seconds": 5227,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "total": 4251,
+      "projects": [
+        {
+          "name": "fineract",
+          "seconds": 4251,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "total": 1321,
+      "projects": [
+        {
+          "name": "fineract",
+          "seconds": 1321,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "total": 5722,
+      "projects": [
+        {
+          "name": "fineract",
+          "seconds": 5722,
+          "color": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "total": 4184,
+      "projects": [
+        {
+          "name": "fineract",
+          "seconds": 4184,
           "color": ""
         }
       ]
